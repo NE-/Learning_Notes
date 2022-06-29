@@ -147,4 +147,4 @@ POP IX ; 11011101 11100001
 ;; Finally, SP is incremented again.
 ; 2 Bytes, 4 M Cycle, 14(4,4,3,3) T States, E.T 3.50μs
 ; Assembled as: 11111101 11100001
-POP IX ; 11111101 11100001
+POP IY ; 11111101 11100001
