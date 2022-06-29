@@ -94,7 +94,7 @@ LD SP, IX ; 11011101 11111001
 ; Contents of IY loaded into Stack Pointer SP
 ; 2 Bytes, 2 M Cycle, 10(4,6) T States, E.T 2.50μs
 ; Assembled as: 11111101 11111001
-LD SP, IX ; 11111101 11111001
+LD SP, IY ; 11111101 11111001
 
 ;; PUSH qq
 ; Contents of register pair qq pushed into external memory LIFO stack.
