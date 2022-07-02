@@ -1,4 +1,9 @@
-c
+;;
+; Author: NE- https://github.com/NE-
+; Date: 2022 July 01
+; Purpose: Testing out the Bit Set, Reset, and Test Group
+;;
+
 
 ;;;
 ; Machine Code Representation
