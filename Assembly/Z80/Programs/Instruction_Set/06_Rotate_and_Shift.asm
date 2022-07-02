@@ -1,8 +1,4 @@
-;;
-; Author: NE- https://github.com/NE-
-; Date: 2022 July 01
-; Purpose: Testing out the  Rotate and Shift Groups
-;;
+c
 
 ;;;
 ; Machine Code Representation
@@ -265,4 +261,4 @@ RLD ; 11101101 01101111
 ; H - reset
 ; P/V - set if parity of Accumulator is even after an operation; otherwise reset.
 ; N - reset
-RLD ; 11101101 01101111
+RRD ; 11101101 01100111
