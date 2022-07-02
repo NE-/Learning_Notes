@@ -60,7 +60,7 @@ RRCA ; 00001111
 ; H - reset
 ; N - reset
 ; C - holds data from bit 0 of Accumulator
-RRCA ; 00001111
+RRA ; 00001111
 
 ;; RLC r
 ; Contents of register r rotated left 1 bit position. Bit 7 copied to Carry flag and also to bit 0
