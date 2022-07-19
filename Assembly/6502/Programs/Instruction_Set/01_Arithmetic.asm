@@ -6,7 +6,7 @@
 
 ;; ADC
 ; Add contents of specified memory address, with carry, to Accumulator.
-; Compiled as: 011 aaa 01
+; Assembled as: 011 aaa 01
 ;; Immediate:    010 [2 Bytes 2 Cycles]
 ;; ZP:           001 [2 Bytes 3 Cycles]
 ;; ZP,X:         101 [2 Bytes 4 Cycles]
@@ -25,7 +25,7 @@ ADC ($45), Y ; 011 100 01 01000101
 
 ;; SBC
 ; Subtract contents of specified memory address, with compliment carry, to Accumulator.
-; Compiled as: 111 aaa 01
+; Assembled as: 111 aaa 01
 ;; Immediate:    010 [2 Bytes 2 Cycles]
 ;; ZP:           001 [2 Bytes 3 Cycles]
 ;; ZP,X:         101 [2 Bytes 4 Cycles]

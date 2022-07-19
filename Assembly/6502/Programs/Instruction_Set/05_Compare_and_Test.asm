@@ -14,7 +14,7 @@
 ;; CMP
 ; Compare contents of specified memory address with Accumulator.
 ;; Subtracts memory contents with Accumulator and sets flags accordingly.
-; Compiled as: 110 aaa 01
+; Assembled as: 110 aaa 01
 ;; Immediate:    010 [2 Bytes 2 Cycles]
 ;; ZP:           001 [2 Bytes 3 Cycles]
 ;; ZP,X:         101 [2 Bytes 4 Cycles]
@@ -29,7 +29,7 @@ CMP ($FF23,X) ; 110 000 01 00100011
 
 ;; CPX
 ; Compare contents of specified memory address with Index Register X.
-; Compiled as: 1110 cc 00
+; Assembled as: 1110 cc 00
 ;; Immediate: 00 [2 Bytes 2 Cycles]
 ;; ZP:        01 [2 Bytes 3 Cycles]
 ;; Absolute:  11 [3 Bytes 4 Cycles]
@@ -38,7 +38,7 @@ CPX $02 ; 1110 01 00 00000010
 
 ;; CPY
 ; Compare contents of specified memory address with Index Register Y.
-; Compiled as: 1100 cc 00
+; Assembled as: 1100 cc 00
 ;; Immediate: 00 [2 Bytes 2 Cycles]
 ;; ZP:        01 [2 Bytes 3 Cycles]
 ;; Absolute:  11 [3 Bytes 4 Cycles]
@@ -47,7 +47,7 @@ CPY #45 ; 1100 00 00 00101101
 
 ;; BIT
 ; Logically AND Accumulator with contents of selected memory location.
-; Compiled as: 0010 x 100
+; Assembled as: 0010 x 100
 ;; Absolute: 1 [2 Bytes 3 Cycles]
 ;; ZP:       0 [3 Bytes 4 Cycles]
 ;;; Condition Bits Affected

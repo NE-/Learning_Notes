@@ -6,7 +6,7 @@
 
 ;; LDA
 ; Loads contents of selected memory byte into Accumulator.
-; Compiled as: 101 aaa 01 
+; Assembled as: 101 aaa 01 
 ;; Immediate:    010 [2 Bytes 2 Cycles]
 ;; ZP:           001 [2 Bytes 3 Cycles]
 ;; ZP,X:         101 [2 Bytes 4 Cycles]
@@ -23,7 +23,7 @@ LDA $12,X ; 101 101 01 00010010
 
 ;; LDX
 ; Load contents of selected memory byte into X.
-; Compiled as: 101 ddd 10
+; Assembled as: 101 ddd 10
 ;; Immediate:  000 [2 Bytes 2 Cycles]
 ;; ZP:         001 [2 Bytes 3 Cycles]
 ;; ZP,Y:       101 [2 Bytes 4 Cycles]
@@ -37,7 +37,7 @@ LDX $6754,Y ; 101 111 10 01010100 01100111
 
 ;; LDY
 ; Load contents of selected memory byte into Y.
-; Compiled as: 101 ddd 00
+; Assembled as: 101 ddd 00
 ;; Immediate:  000 [2 Bytes 2 Cycles]
 ;; ZP:         001 [2 Bytes 3 Cycles]
 ;; ZP,X:       101 [2 Bytes 4 Cycles]
@@ -50,7 +50,7 @@ LDY $A6CD ; 101 011 00 11001101 10100110
 
 ;; STA
 ; Store contents of Accumulator into specified memory location.
-; Compiled as: 100 aaa 01
+; Assembled as: 100 aaa 01
 ;; ZP:           001 [2 Bytes 3 Cycles]
 ;; ZP,X:         101 [2 Bytes 4 Cycles]
 ;; Absolute:     011 [3 Bytes 4 Cycles]
@@ -62,7 +62,7 @@ STA ($20,X) ; 10000001 00100000
 
 ;; STX
 ; Store contents of Index register X into specified memory location.
-; Compiled as: 100 bb 110
+; Assembled as: 100 bb 110
 ;; ZP:       00 [2 Bytes 3 Cycles]
 ;; ZP,Y:     10 [2 Bytes 4 Cycles]
 ;; Absolute: 01 [3 Bytes 4 Cycles]
@@ -71,7 +71,7 @@ STX $DF ; 100 00 110 11011111
 
 ;; STY
 ; Store contents of Index register Y into specified memory location.
-; Compiled as: 100 bb 100
+; Assembled as: 100 bb 100
 ;; ZP:       00 [2 Bytes 3 Cycles]
 ;; ZP,X:     10 [2 Bytes 4 Cycles]
 ;; Absolute: 01 [3 Bytes 4 Cycles]
