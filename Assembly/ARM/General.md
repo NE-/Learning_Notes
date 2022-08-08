@@ -30,14 +30,32 @@
 - All modes except user are referred to as *privileged* modes (because they service exceptions or access privileged resources).
 ## User
 - Used for task protection.
+- Programs can access resources they have permission for.
 ## FIQ - Fast Interrupt Request
+- Higher priority, faster, lower latency; first when multiple interrupts occur.
+- FIQ servicing disables IRQ until re-enabled by FIQ.
+  - Done by restoring CSPR from SPSR at the end of the handler.
+- Last entry of vector table (0x1C) to remove need of branching.
 ## IRQ - Interrupt Request
+- Normal priority standard interrupt handler.
 ## Supervisor
+- `SVC` instruction executed; allows for privileged level execution.
 - Common in embedded applications.
 ## Abort
+- Invalid memory access.
+- Program terminated or OS sends signal.
 ## Undefined
+- Invalid instruction encountered.
+- Program terminated or OS sends signal.
 ## System (ARMv4+)
+- OS runs at this level.
 - Common in embedded applications.
+## Monitor
+- Monitor the system (feature in ARM procesors with security extensions).
+## Hyp
+- Hypervisor mode (optional ARM extension).
+- Allows virtual hypervisor to run at more secure level than the OS it is virtualizing.
+
 
 # Registers
 - 37 Registers (arranged in partially overlapping banks; different bank for each mode).
