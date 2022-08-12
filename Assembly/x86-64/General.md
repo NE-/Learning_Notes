@@ -1,7 +1,7 @@
 <!--
   Author: NE- https://github.com/NE-
   Date: 2022 July 11
-  Purpose: General notes for the 6502
+  Purpose: General notes for the x86-64.
 -->
 
 # General
