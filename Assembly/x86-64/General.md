@@ -6,7 +6,7 @@
 
 # General
 - Segment registers esentially obsolete.
-- 16 general purpose registers with few specialized instructions.
+- 16 general purpose registers with few specialized instructions and 16 modern floating point registers (128 or 256 bits).
 - Little Endian.
 
 # Floating Point
@@ -45,3 +45,30 @@
 - Mapped to highest address of a process.
    - Linux x86-64 it's `0x7FFFFFFFFFFF` or 131 TB. Max amount of bits allowed in logical address being 48 bits (47 bits all '1', 48th '0').
 - Typically 16MB (depends on Kernel) therefore lowest valid address `0x7FFFFF000000`.
+
+# Registers
+- 16 registers means register's "address" is only 4 bits, therefore, instructions using registers are smaller.
+## rip
+- Contains address of next instruction to execute.
+## rflags
+- 64 bit flags register.
+- Only lower 32 bits used, so generally referred as *eflags*.
+
+## 8088
+- ax - accumulator
+- bx - base register
+- cx - count (string operations)
+- dx - data register
+- si - source index
+- di - destination index
+- bp - base pointer
+- sp - stack pointer
+
+- a,b,c,d have high and low bytes (al,ah,bl,bh,etc.).
+- 386 CPU expanded registers to 32-bits and renamed (added 'e' before names e.g. eax, ebx, ebp).
+  - removing 'e' resized registers to 16 bits.
+  - Lower byte used to resize to 8 bit but high byte unaccessible.
+- x86-64 expanded to 64 bit + 8 additional general purpose registers added (r8-r15).
+  - 64 bit registers added 'r' e.g. rax rbx rdi.
+  - remove 'r' (ax) access lowest word, replace 'r' with 'e' (eax) access lower half.
+  - Access r8-r15 as byte, word, double word by appending b, w, d to register name.
