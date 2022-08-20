@@ -23,7 +23,7 @@
 ; Best to just use call
 ;;;
 
-  push next_instruction
+  push next_instruction ; (rip + 2 instructions)
   jmp my_function
 next_instruction:
   ...
@@ -77,5 +77,100 @@ main:
 ```
 
 ## Stack Frame
+- Start with standard `push rbp mov rbp, rsp`.
+  - Creates a linked list of objects (function invocation) on the stack.
+    - Greatefor the debugger: allows for backtracing, identifying functions, and line number.
+- End with `mov rsp, rbp pop rbp` (opposite of prologue).
+- If too many local variables or functions call other functions, you may need to allocate space on stack.
+  - Subtract from rsp to allocate.
+  ```asm
+  ;;; Sample allocate on stack
+  push rbp
+  mov rbp, rsp
+  sub rsp, 32 ; Allocate 32 bytes (multiple of 16).
+  ...
+  leave       ; Undo prologue
+  ret
+  ```
+- "Leaf" functions don't require prologue or `leave`.
+- Can also be omitted in general, though gdb won't be able to backtrace.
+### Variables
+- Referenced using rbp.
+  - Uses right-to-left calling convention (CDECL) so the left-most argument will be at the top.
+```asm
+;;; Rough stack representation. Assume 8 byte bounded stack.
+[rbp+32] ; 3rd argument
+[rbp+24] ; 2nd argument
+[rbp+16] ; 1st argument
+[rbp+8]  ; return address (pre call eip + 2)
+[rbp]    ; Old rbp value
+[rbp-8]  ; 1st local variable
+[rbp-16] ; 2nd local variable
+...
+[rbp-X]  ; Current stack pointer
+```
+- Must specify which registers must be preserved.
+  - System V ABI: rbx, rbp, r12-r15.
+  - Windows rbx, rbp, rsi, rdi, r12-r15.
 
-  
+## Recursion
+- Generally require stack frames with local variable storage for each stack frame.
+```asm
+;;; Sample recursion
+; Computes n!
+;;;
+
+        segment .data
+x             dq  0
+scanf_format  db "%ld", 0
+printf_format db "fact(%ld) = %ld",0x0a,0
+
+        segment .text
+        global main
+        global fact
+        extern scanf  ; Exists in libc
+        extern printf ; Exists in libc
+
+main:
+        push  rbp
+        mov   rbp, rsp
+        lea   rdi, [scanf_format]  ; scanf arg 1 (const char* format).
+        lea   rsi, [x]             ; scanf arg 2 (allocated object to hold input).
+        xor   eax, eax             ; 0 float parameters in scanf.
+        call  scanf
+
+        mov   rdi, [x]             ; Use 'x' for fact
+        call  fact
+
+        lea   rdi, [printf_format] ; printf arg 1 (const char* format).
+        mov   rsi, [x]             ; printf arg 2 (allocated object to print. Our input).
+        mov   rdx, rax             ; printf arg 3 (allocated object to print. Return of fact call AKA x!).
+        xor   eax,eax              ; 0 float parameters in printf.
+        call  printf
+
+        xor   eax,eax              ; return 0
+        leave
+        ret
+
+fact:
+n       equ   8                    ; Local variable. equ is *assembler* pseudo-op.
+        push  rbp
+        mov   rbp,rsp
+        sub   rsp, 16              ; Allocate for n
+        cmp   rdi, 1 ; 1 - rdi
+        jg    greater              ; if 1 - rdi > 0 go to "greater"
+
+        ; Otherwise
+        mov   eax, 1 ; Return 1
+        leave
+        ret
+
+greater:
+        mov   [rsp+n], rdi         ; Save rdi in "n"
+        dec   rdi                  ; Prepare to call fact with n-1
+        call  fact                 ; Recurse
+        mov   rdi, [rsp+n]         ; Restore original "n"
+        imul  rax, rdi             ; Multiply fact(n-1)*n
+        leave 
+        ret
+```
