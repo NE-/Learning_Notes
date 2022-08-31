@@ -1,7 +1,7 @@
 <!--
   Author: NE- https://github.com/NE-
-  Date: 2022 August 30
-  Purpose: General Fortran (95/2003/2008) Notes.
+  Date: 2022 August 31
+  Purpose: General Fortran (95/2003/2008) Expression Notes.
 -->
 
 # Expressions
@@ -113,4 +113,4 @@ program findvelo
   write (*,*) "velocity = ", velocity
 
 end program findvelo
-
+```
