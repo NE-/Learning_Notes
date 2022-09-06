@@ -103,3 +103,4 @@ contains
 
 end program sumavg
 ```
+- Functions return with a value, subroutine is a task and "return' only through arguments (intent(in|out|inout)).
