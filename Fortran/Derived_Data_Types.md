@@ -56,6 +56,7 @@ temp = class(5)
 class(5) = class(11)
 class(11) = temp
 ```
+---
 
 ```fortran
 ! Example calculate class average

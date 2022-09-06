@@ -93,6 +93,7 @@
   - Numreic can be: integer, real, complex, double precision, double complex, or real\*16 (SPARC only).
   - Compiler implicitly converts logical to appropriate numeric.
   - **Using these features may make your program not portable!**
+---
 
 ```fortran
 ! Calculate velocity from acceleration and time

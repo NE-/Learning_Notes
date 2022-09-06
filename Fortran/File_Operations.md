@@ -105,6 +105,7 @@ read (12, '(i5)', iostat=rdstat) num2
 ## Close File
 - `close <unit number>` close file when it is no longer needed.
   - `<unit number>` same as initial `open`'s `unit` number.
+---
 
 ```fortran
 ! Example read user-entered file

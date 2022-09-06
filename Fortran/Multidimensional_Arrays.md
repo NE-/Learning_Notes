@@ -32,7 +32,7 @@ integer :: allstat
 
 allocate(nums(100,100), stat=allstat)
 ```
-
+---
 ```fortran
 ! Example Monte Carlo Pi estimation
 

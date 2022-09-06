@@ -68,6 +68,7 @@ str3 = str1(1:3) // str2(4:6)
  | TRIM(STR) | Returns string based on *STR* with trailing spaces removed. |
  | ADJUSTL(STR) | Return string modified by removing leading spaces. Spaces inserted at end as needed. |
  | ADJUSTR(STR) | Return string modified by removing trailing spaces. Spaces inserted at beginning as needed. |
+---
 
 ```fortran
 ! Convert lower-case letters to upper-case letters

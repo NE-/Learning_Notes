@@ -64,6 +64,7 @@ write (*,*) (nums(i), i=1,5)
  | MAXVAL(ARR) | Returns max value in array ARR. |
  | MINVAL(ARR) | Returns min value of array ARR. |
  | SUM(ARR) | Returns sum of values in array ARR. |
+ ---
 
  ```fortran
  ! Example standard deviation
