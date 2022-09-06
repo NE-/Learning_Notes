@@ -106,3 +106,105 @@ program convCase
 
 end program convCase
 ```
+
+## String to Numeric Conversions
+- Done with internal `read` operation.
+```fortran
+! Example character to numeric conversion using read
+
+program convert
+
+  implicit none
+
+  integer :: cvtErr
+  character(4) :: iString   = "1234"
+  character(4) :: rString   = "3.14159"
+  character(4) :: badString = "3.14z59"
+  integer :: iNum1, iNum2
+  real :: pi, tau
+
+  ! Display header
+  write (*,'(a, /)') "Character to Numeric Conversion"
+
+  ! Convert string to integer
+  read (iString, '(i10)', iostat=cvtErr) iNum1
+
+  ! Check read status
+  if (cvtErr == 0) then
+    ! Successful operation
+    iNum2 = iNum1 * 2
+    write (*,'(a, i5, /, a, 15, /)') &
+      "num1 = ", iNum1, "num2 = ", iNum2
+  else
+    write (*,'(a,/)') "Error, invalid integer string."
+  end if
+
+  ! Convert string to real
+  ! Not reading from STDIN; using variable instead
+  read (rString, '(f17.6)', iostat=cvtErr) pi
+
+  ! Check read status
+  if (cvtErr == 0) then
+    tau = pi * 2.0
+    write (*,'(a,f5.3,/,a,f5.3,/)') &
+      "pi = ", pi, "tau = ", tau
+  else
+    write (*,'(a,/)') "Error, invalid real string"
+  end if
+
+  ! Convert string to real
+  !! Demonstrate error handling
+  read (badString, '(f12.4)', iostat=cvtErr) pi
+
+  ! Check read status
+  if (cvtErr == 0) then
+    tau = pi * 2.0
+    write (*,'(a,f5.3,/,a,f6.3,/)') &
+      "pi = ", pi, "tau = ", tau
+  else
+    write (*,'(a,/)') "Error, invalid real string"
+  end if
+
+end program convert
+```
+
+## Numeric to String Conversion
+- Done with internal `write` operation.
+```fortran
+! Example convert integer/real to string
+program convert
+
+  implicit none
+
+  integer :: cvtErr
+  character(50) :: str1, str2, msg1, msg2
+  integer :: iNum = 2468
+  real :: pi=3.14, tau
+
+  ! Display header
+  write (*,'(a,/)') "Numeric to String Conversion"
+
+  ! Convert integer to string
+  iNum = iNum / 100
+  ! Not writing to STDOUT; using variable instead
+  write (str1, '(i3)', iostat=cvtErr) iNum
+
+  if (cvtErr == 0) then
+    msg1 = "My age is " // str1
+    write (*,'(a,a)') "Message 1 = ", msg1
+  else
+    write (*,'(a,/)') "Error, invalid conversion"
+  end if
+
+  ! Convert real to string
+  tau = pi * 2.0
+  write (str2, '(f5.3)',iostat=cvtErr) tau
+
+  if (cvtErr==0) then
+    msg2 = "TAU is " // str2
+    write (*,'(a,a,/)') "Message 2 = ", msg2
+  else
+    write (*,'(a,/)') "Error, invalid conversion"
+  end if
+
+end program convert
