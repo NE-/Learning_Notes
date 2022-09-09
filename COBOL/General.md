@@ -58,6 +58,9 @@ public class SalesTaxWithBigDecimal {
 - RCA and Remington-Rand-Univac produced first compiler.
 - Standards assumed by ANSI, which produced next 3 standards: ANS 68, ANS 74, and ANS 85.
   - Newer standards assumed by ISO. ISO 2002 was first standard produced by ISO which defines object-oriented version of COBOL.
+- Used coding forms and passed to puch-card operators then submitted to computer operator.
+  - Required many strict formatting rules that aren't necessary today, but still followed.
+
 
 # Standards
 - 4 standards: 1968, 1974, 1985, and 2002.
