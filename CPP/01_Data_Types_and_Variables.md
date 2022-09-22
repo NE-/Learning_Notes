@@ -36,6 +36,14 @@ void // No size
 ```
 - To find range, use: -2<sup>n-1</sup> to 2<sup>n-1</sup> - 1, where *n* is the number of bits.
   - Unsigned numbers use: 0 to 2<sup>n</sup> - 1.
+- C++20 signed integers are two's complement.
+```cpp
+int i{ -1 };
+i <<= 1; // -2
+
+int j{ -1 };
+j >>= 1; // -1 sign-extension
+```
 
 ## Fast and Least
 - For integral types, since the compiler handles the way types are represented, there is no guarantee the types will be exactly X bytes; this can be a waste of memory and risk of under/overflow is increased. Especially true for pre-64-bit computers.
@@ -75,6 +83,8 @@ int c{ 'a' };     // Legal
 - Compiler will swap out const variables with literals if it proves to be efficient.
 - C++11 introduced `constexpr` to specify a constant *must* be resolved at compile-time.
   - `const` can be resolved at run-time.
+- C++20 introduced `consteval` to specify a **function** *must* be evaluated at compile-time only.
+  - `constexpr` implies a function *can* be evaluated at compile-time.
 ```c++
 const double pi{ 3.14159 };
 constexpr double sqrt3 { 1.7320508 };

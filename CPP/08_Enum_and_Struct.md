@@ -142,6 +142,11 @@ Person Gabe {
   1
 };
 
+// C++20 Designated initializers
+// - Initialization MUST be in order
+Person Desirae { .birthYear=1987, .height=1.76 };
+
+
 Person Rob{ Gabe }; // Copies all values
 Rob.birthDay = 7;
 Rob.isDeceased = false;

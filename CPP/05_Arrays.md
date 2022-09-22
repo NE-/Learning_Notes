@@ -87,6 +87,10 @@ for (auto& i : arr)
 
 for (const auto& i : arr)
   i = 0; // ERROR: i is const
+
+// Can have initializers
+for (int a{0}, b{9}; const auto& i : arr)
+  std::cout << ++a << ' ' << ++b << '\n';
 ```
 
 # Multidimensional Arrays

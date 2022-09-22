@@ -31,6 +31,7 @@ A<int> adbl2(23.23);  // OK m_a is 23
 ```
 - Change behavior based on the typename functions (function template specialization) and templates (class template specialization).
   - Useful for heavy objects or if some allocation is needed.
+- `typename` can be `auto`.
 ```cpp
 /** Function Specialization **/
 template<typename T>
@@ -190,6 +191,9 @@ a_i.getSize(); // 5
 
 A<double> a_d;
 a_d.getSize(); // 20
+
+A a_deduction{ 7 }; // Compiler will determine type
+a_deduction.getSize(); // 7
 ```
 ## Template Template Parameters
 - Template inside template parameter list.

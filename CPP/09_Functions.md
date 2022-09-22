@@ -316,4 +316,49 @@ std::cout << a; // prints 2
 [&, &a]() {}; // ERROR everything already captured as reference
 [=, a]() {};  // ERROR everything already captured by value
 [a, &a]() {}; // ERROR two instances of 'a'
+
+[*this]{};    // Capture "this" by value (C++17)
+[this]{};     // Capture "this" by reference (C++20)
+```
+
+## Template Parameter Lists
+```cpp
+// Until C++17
+[](auto vector){
+  using T =typename decltype(vector)::value_type;
+  // use T
+};
+// since C++20:
+[]<typename T>(std::vector<T> vector){
+  // use T
+};
+
+// access argument type
+// until C++20
+[](const auto& x){
+  using T = std::decay_t<decltype(x)>;
+  // using T = decltype(x); // without decay_t<> it would be const T&, so
+  T copy = x;               // copy would be a reference type
+  T::static_function();     // and these wouldn't work at all
+  using Iterator = typename T::iterator;
+};
+// since C++20
+[]<typename T>(const T& x){
+  T copy = x;
+  T::static_function();
+  using Iterator = typename T::iterator;
+};
+
+// perfect forwarding
+// until C++20:
+[](auto&&... args){
+  return f(std::forward<decltype(args)>(args)...);
+};
+// since C++20:
+[]<typename... Ts>(Ts&&... args){
+  return f(std::forward<Ts>(args)...);
+};
+
+// and of course you can mix them with auto-parameters
+[]<typename T>(const T& a, auto b){};
 ```

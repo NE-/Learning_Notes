@@ -160,6 +160,12 @@ int* arr{ new int[size] };
 delete [] arr;
 arr = nullptr;
 ```
+```cpp
+// C++20 array size deduction
+int* a0{ new int[]{ 1,2,3,4 } };
+int* a1{ new int[]{} };
+int* a2{ new int[](1,2,3,4) };
+```
 
 ## Multidimentional Arrays
 - Just a pointer that holds pointers.
