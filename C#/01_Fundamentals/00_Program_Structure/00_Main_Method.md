@@ -166,3 +166,60 @@ class MainClass
 // If 3 is entered on command line, the
 // output reads: The factorial of 3 is 6.
 ```
+
+# Top Level Statements
+- Since C#9, don't need explicit `Main` method in console application.
+- Application must have only one entry point. Project can have only one file with top-level statements.
+  - Project can have additional source code files that don't have top-level statements
+- Can explicitly write `Main` method, but it can't function as entry point.
+  - `-main` compiler option can't be used.
+- `using` directives must be first in the file.
+- Top-level statements implicitly in global namespace.
+- Can have namespaces and type definitions, but must come *after* top-level statements.
+```c#
+MyClass.TestMethod();
+MyNamespace.MyClass.MyMethod();
+
+public class MyClass
+{
+  public static void TestMethod()
+  {
+    Console.WriteLine("Hello World!");
+  }
+
+}
+
+namespace MyNamespace
+{
+  class MyClass
+  {
+    public static void MyMethod()
+    {
+        Console.WriteLine("Hello World from MyNamespace.MyClass.MyMethod!");
+    }
+  }
+}
+```
+- Top-level statements can reference `args` variable.
+  - `args` never null, but length is zero if no command-line arguments provided.
+- Can use `await`.
+```c#
+Console.Write("Hello ");
+await Task.Delay(5000);
+Console.WriteLine("World!");
+```
+- Can return exit code at the end.
+```c#
+string? s = Console.ReadLine();
+
+int returnValue = int.Parse(s ?? "-1");
+return returnValue;
+```
+
+## Implicit Entry Point Method
+ | Top-level code contains | Implicit `main` signature |
+ | ----------------------- | ------------------------- |
+ | `await` and `return` | `static async Task<int> Main(string[] args)` |
+ | `await` | `static async Task Main(string[] args)` |
+ | `return` |	`static int Main(string[] args)` |
+ | No `await` or `return` | `static void Main(string[] args)` |
