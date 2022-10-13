@@ -246,3 +246,173 @@ public static void Main()
   Console.WriteLine(person1 == person2); // output: True
 }
 ```
+
+# Interfaces
+- Contain definitions that non-abstract `class` or `struct` must implement.
+- `static` methods must be implemented in the interface.
+- Default implmentations for members may be defined.
+- May not declare fields, auto-implemented properties, or property-like events.
+  - Can't contain instance fields, instance constructors, or finalizers.
+  - members public by default, but can explicitly specify accessibility modifiers.
+    - `private` members *must* have default implementation.
+- Must use interface to simulate inheritance in structs.
+- Interfaces can inherit from one or more interfaces.
+- C#11, interface members  that aren't fields may be `static abstract`.
+```c#
+// Interface Class
+interface IEquatable<T>
+{
+  bool Equals(T obj);
+}
+
+// Usage
+public class Car : IEquatable<Car>
+{
+  public string? Make  { get; set; }
+  public string? Model { get; set; }
+  public string? Year  { get; set; }
+
+  // Implementation of IEquatable<T> interface
+  public bool Equals(Car? car)
+  {
+    return (this.Make, this.Model, this.Year) ==
+      (car?.Make, car?.Model, car?.Year);
+  }
+}
+```
+
+# Generic Classes and Methods
+- Concept of type parameters. Commonly used for collections.
+- Types resolved at run-time using by reflection.
+- Combine reusability, type safety, and efficiency in a way non-generics cannot.
+- Non-generic collections, such as `ArrayList`, are **not** recommended and are maintained for compatibility reasons (located in `System.Collections`).
+  - Recommended collections located in `System.Collections.Generic`.
+```c#
+// Example linked list
+// - Recommended to use List<T> instead
+// type parameter T in angle brackets
+public class GenericList<T>
+{
+  // The nested class is also generic on T.
+  private class Node
+  {
+    // T used in non-generic constructor.
+    public Node(T t)
+    {
+      next = null;
+      data = t;
+    }
+
+    private Node? next;
+    public Node? Next
+    {
+      get { return next; }
+      set { next = value; }
+    }
+
+    // T as private member data type.
+    private T data;
+
+    // T as return type of property.
+    public T Data
+    {
+      get { return data; }
+      set { data = value; }
+    }
+  }
+
+  private Node? head;
+
+  // constructor
+  public GenericList()
+  {
+    head = null;
+  }
+
+  // T as method parameter type:
+  public void AddHead(T t)
+  {
+    Node n = new Node(t);
+    n.Next = head;
+    head = n;
+  }
+
+  public IEnumerator<T> GetEnumerator()
+  {
+    Node? current = head;
+
+    while (current != null)
+    {
+      yield return current.Data;
+      current = current.Next;
+    }
+  }
+}
+
+// Usage
+class TestGenericList
+{
+  static void Main()
+  {
+    // int is the type argument
+    GenericList<int> list = new GenericList<int>();
+
+    for (int x = 0; x < 10; x++)
+    {
+      list.AddHead(x);
+    }
+
+    foreach (int i in list)
+    {
+      System.Console.Write(i + " ");
+    }
+    System.Console.WriteLine("\nDone");
+  }
+}
+```
+
+# Anonymous Types
+- Convenient way to encapsulate a set of read-only properties into single object without having to explicitly define a type first.
+- Methods or events invalid. Initializer values cannot be `null`, anonymous function, or pointer type.
+- Type generated and inferred by compiler.
+- Create using `new` with object initializer.
+- Anonymous types are *class* types derived from `object` and can't be cast to other types.
+- Similar object initializers (properties in the same order have same name and type) in an assembly are treated as instances of the same type.
+  - Share same compiler-generated type information.
+```c#
+var v = new { Amount = 108, Message = "Hello" };
+//                  int        string
+Console.WriteLine(v.Amount + v.Message);
+```
+- Typically used with `LINQ` queries.
+```c#
+var productQuery =
+  from prod in products
+  select new { prod.Color, prod.Price };
+
+// var v automatically gives the correct type
+foreach (var v in productQuery)
+{
+  Console.WriteLine("Color={0}, Price={1}", v.Color, v.Price);
+}
+```
+```c#
+// Create array  of anonymously typed elements
+var anonArray = new[] { new { name = "apple", diam = 4 }, new { name = "grape", diam = 1 }};
+```
+```c#
+// Use with for non-destructive mutation
+var apple = new { Item = "apples", Price = 1.35 };
+var onSale = apple with { Price = 0.79 }; // New instance
+Console.WriteLine(apple);
+Console.WriteLine(onSale);
+```
+```c#
+// Using ToString
+var v = new { Title = "Hello", Age = 24 };
+
+Console.WriteLine(v.ToString()); // "{ Title = Hello, Age = 24 }"
+```
+- Can't declare a field, property, event, or return type of a method as having an anonymous type. Can't declare a formal parameter of a method, property, constructor, or indexer as having an anonymous type.
+- Pass anonymous types as argument, declare parameter as type `object`.
+  - Beats purpose of strong typing. Consider using ordinary class or struct.
