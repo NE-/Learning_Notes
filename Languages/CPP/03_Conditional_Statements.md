@@ -26,7 +26,7 @@
     (x <=> y)  > 0 if x  > y // Greater
     (x <=> y) == 0 if x == y // Equal
     
-    Must use std::string_ordering for integerals,
+    Must use std::strong_ordering for integerals,
     std::partial_ordering for floating-point
       In <compare>
  */
