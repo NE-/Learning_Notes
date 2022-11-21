@@ -33,10 +33,10 @@
 
 ## Pseudo-Code
 ```lua
-for i=1 to n-1 do
+for i=0 to n-1 do
   swapped = false
 
-  for j = 0 to n-i do
+  for j = 0 to n-i-1 do
     if A[j] > A[j+1] then
       swap(A[j], A[j+1])
       swapped = true
