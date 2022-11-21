@@ -11,7 +11,7 @@
  |x`>>`y | right shift (logical if unsigned, arithmetic if signed though it may vary) |
  | `~`x | NOT/Compliment flips all the bits |
  |x`&`y | AND operation |
- | x`|`y | OR operation |
+ | x`\|`y | OR operation |
  | x`^`y | XOR operation |
 
 # std::bitset
