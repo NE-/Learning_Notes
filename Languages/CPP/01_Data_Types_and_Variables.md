@@ -77,6 +77,10 @@ MyClass b(3,1,4,"159");
 int a{ 5 };
 int b{ 3.14159 }; // ERROR incompatible type!
 int c{ 'a' };     // Legal
+
+// Unused variables
+int x{ 5 }; // Warning: unused variable
+[[maybe_unused]] int x{ 5 }; // Compiler doesn't throw error
 ```
 
 # Constants
