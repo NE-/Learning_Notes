@@ -64,6 +64,7 @@ std::string_view str { "constant string" };
 static_cast<std::string>(str); // Cast is possible
 
 str.length(); // 15
+std::ssize(str); // C++20
 str.substr(0, str.find(' ')); // constant
 
 // C++20
@@ -78,4 +79,14 @@ std::cout
 // Change viewable area, not the string itself
 str.remove_prefix(1); // Ignore 1 character: onstant string
 str.remove_suffix(1); // Ignore last 2: onstant stri
+```
+
+# Literals
+- `s` for `string`, `sv` for `string_view`.
+```c++
+using namespace std::literals;
+
+std::cout << "C-Style\n";
+std::cout << "string\n"s;
+std::cout << "string_view\n"sv;
 ```
