@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 August 30
+  Author:  NE- https://github.com/NE-
+  Date:    2022 August 30
   Purpose: General Fortran (95/2003/2008) Notes.
 -->
 
@@ -95,6 +95,6 @@ end program first
  | Function | Description |
  | -------- | ----------- |
  | COMMAND_ARGUMENT_COUNT() | Returns the number of command line arguments. |
- | GET_COMMAND_ARGUMNENT(NUMBER,VALUE, LENGTH,STATUS) | Returns the command line arguments, if any.<br>- **NUMBER** integer argument of the number to return. Must be between 1 and COMMAND_ARGUMENT_COUNT().<br>- **VALUE** character(*), Nth argument.<br>- **LENGTH** integer, length of argument returned in **VALUE**.<br>- **STATUS** integer, status, 0=success and -1=**VALUE** character array is too small for argument, other values=retrieval failed |
- | CPU_TIME(TIME) | Returns the amount of CPU time expended on the current program in seconds. **TIME** is return as a real value. |
+ | GET_COMMAND_ARGUMENT(NUMBER,VALUE, LENGTH,STATUS) | Returns the command line arguments, if any.<br>- **NUMBER** integer argument of the number to return. Must be between 1 and COMMAND_ARGUMENT_COUNT().<br>- **VALUE** character(*), Nth argument.<br>- **LENGTH** integer, length of argument returned in **VALUE**.<br>- **STATUS** integer, status, 0=success and -1=**VALUE** character array is too small for argument, other values=retrieval failed |
+ | CPU_TIME(TIME) | Returns the amount of CPU time expended on the current program in seconds. **TIME** is returned as a Real value. |
  | DATE_AND_TIME(DATE,TIME,ZONE,VALUES) | Return the date and time.<br>- **DATE**, character(8), string in the form YYYYMMDD<br>- **TIME**, character(10), string in the form HHMMSS.SSS.<br>- **ZONE**, character(5), string in the form of ±HHMM, where HHMM is the time difference between local time and Coordination Universal Time.<br>- **VALUES**, integer array where<br>VALUES(1) → year<br>VALUES(2) → month (1-12)<br>VALUES(3) → date (1-31)<br>VALUES(4) → time zone difference (minutes)<br>VALUES(5) → hour (0-23)<br>VALUES(6) → minutes<br>VALUES(7) → seconds (0-59)<br>VALUES(8) → milleseconds (0-999)<br>Each argument is optional, but at least one argument must be included. |

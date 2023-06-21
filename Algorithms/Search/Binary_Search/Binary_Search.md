@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 October 24
+  Author:  NE- https://github.com/NE-
+  Date:    2022 October 24
   Purpose: Binary Search Notes
 -->
 
@@ -16,7 +16,7 @@
 // Initialization
 let list = [1,2,3,4,5,6,7,8,9];
 let low  = 0;
-let high = 8; // length of array
+let high = 8; // Length of array
 let mid = -1;
 
 // Find floored (or ceiling) average of left-most ("low") index and right-most ("high").
@@ -69,8 +69,8 @@ bin_HB(A, n, T) {
 let L = 0;
 let R = n;
 while (L < R) {
-  m = floor((L+R) / 2);
-  if (A[m] < T) L = m+1;
+  m = floor((L + R) / 2);
+  if (A[m] < T) L = m + 1;
   else R = m;
 }
 
@@ -91,10 +91,10 @@ return R - 1;
 
 # Performance
 - Best viewed in binary tree syntax where root node is middle element of the array, mid of lower half is left child, mid of upper half is right child, and the rest is similar.
-- **Worst Case**: ⌊log<sub>2</sub>(n)+1⌋
+- **Worst Case**: ⌊log<sub>2</sub>(n) + 1⌋
   - Reached at *lowest* level of the tree.
   - Reached when element is not in the list.
     - Can be ⌊log<sub>2</sub>(n)⌋ if reached 2nd deepest level of tree.
 - **Average Case**: **O**(log n)
 ## Space
-- Requires 3 pointers to elements, regardless of the size of the list so **O**(1).
+- Requires 3 pointers to elements, regardless of the size of the list, therefore **O**(1).

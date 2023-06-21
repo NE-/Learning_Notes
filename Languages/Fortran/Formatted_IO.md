@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 02
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 02
   Purpose: General Fortran (95/2003/2008) IO Format Notes.
 -->
 
@@ -84,7 +84,7 @@ T F
 ## Character Format Specifier
 - `rAw`
   - *w* - width or how many total places are used.
-    - If no width specified, existign length of string is used.
+    - If no width specified, existing length of string is used.
   - *r* - number of times format specifier is repeated.
 ```fortran
 ! (a6)

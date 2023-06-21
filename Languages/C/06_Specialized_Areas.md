@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 14
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 14
   Purpose: C Specialized Areas
 -->
 
@@ -10,7 +10,7 @@
   - `extern`, `auto`, `register`, `static`.
 - External declaration (and functions) default is `extern`; internal is `auto`.
 ### Duration
-- Whether storage allocated once onnly, at program start-up, or is more transient in nature (allocated and freed as necessary).
+- Whether storage allocated once only, at program start-up, or is more transient in nature (allocated and freed as necessary).
 - **Static duration**: storage allocated permanently.
 - **Automatic duration**: storage allocated and freed as necessary.
   - Declaration is inside a function.
@@ -60,7 +60,7 @@
 - How to get appropriate linkage?
   - File scope declaration with `static` results in *internal* linkage.
   - Declaration contains `extern` or function declaration:
-    - If already visible declaration of that identifier whit file scope, linkage stays the same;
+    - If already visible declaration of that identifier with file scope, linkage stays the same;
     - otherwise, *external*.
   - File scope declaration is neither declaration of a function nor contains explicit storage specifier, then *external*.
   - Any other form of declaration is *no linkage*.
@@ -109,7 +109,7 @@ static void none() {
 
 # Typedef
 - Allows you to introduce synonyms for types.
-- Rarely used i ntypical C programming; most common in library development and for portability.
+- Rarely used in typical C programming; most common in library development and for portability.
 ```c
 typedef int aaa, bbb, ccc;
 aaa int1;
@@ -157,13 +157,13 @@ pi = (int*)cpi;
 
 ## Volatile
 - Tells compiler that the object is subject to sudden, unpredictable change.
-- Mostly used in real-time and embedded C programs (aslo asynchronous interrupts).
+- Mostly used in real-time and embedded C programs (also asynchronous interrupts).
 - Dangerous to take address of volatile object (with cast) and put into pointer to a regular object.
   - Possible, but undefined behavior.
 ```C
 // Example no const or volatile accessing hardware
 struct devregs {
-  unsigned short csr; // Control Status Register
+  unsigned short csr;  // Control Status Register
   unsigned short data; // Data port
 };
 
@@ -249,8 +249,6 @@ struct devregs {
   Works, but bad style!
   - volatile belongs in the structure (it should 
   only apply to device registers)
-  - 
-
  */
 volatile struct devregs *const dvp = DEVADDR + devno;
 /////////////////

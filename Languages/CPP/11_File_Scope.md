@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 20
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 20
   Purpose: C++ File Scope
 -->
 

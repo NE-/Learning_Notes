@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 August 31
+  Author:  NE- https://github.com/NE-
+  Date:    2022 August 31
   Purpose: General Fortran (95/2003/2008) Expression Notes.
 -->
 
@@ -82,7 +82,7 @@
   - 2/3 + 3/4 evaluates to 0.
 - INTEGER\*8 mixed with REAL\*4 result is REAL*8.
   - Logical and byte operands in arithmetic context used as Integer.
-- Real operators apply only to Real operands, or combonation of byte, logical, integer, and real operands.
+- Real operators apply only to Real operands, or combination of byte, logical, integer, and real operands.
   - Integer mixed with Real promoted to Real. Fraction is 0.
     - (2/3)*4 is 0.
 - Double precision operators apply only to double precision operands, and any operand of lower precision is promoted to double.
@@ -101,6 +101,7 @@
 program findvelo
 
   implicit none
+  
   real :: velo, accel = 128.0
   real :: time = 8.0
 

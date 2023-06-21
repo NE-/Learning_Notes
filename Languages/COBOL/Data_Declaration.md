@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 10
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 10
   Purpose: COBOL Data Declaration notes.
 -->
 

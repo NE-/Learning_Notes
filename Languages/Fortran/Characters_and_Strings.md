@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 02
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 02
   Purpose: General Fortran (95/2003/2008) Characters and Strings Notes.
 -->
 
@@ -62,7 +62,7 @@ str3 = str1(1:3) // str2(4:6)
  | Function | Description |
  | -------- | ----------- |
  | ACHAR(I) | Returns character representation of *I* based on ASCII table. *I* must be between 1 and 127. |
- | IACHAR(C) | Returns integer value of characher argument *C* represented by ASCII table. |
+ | IACHAR(C) | Returns integer value of character argument *C* represented by ASCII table. |
  | LEN(STR) | Returns integer representing length of string *STR*. |
  | LEN_TRIM(STR) | Returns integer value representing length of string *STR* excluding trailing spaces. |
  | TRIM(STR) | Returns string based on *STR* with trailing spaces removed. |
@@ -101,8 +101,6 @@ program convCase
   ! Display result
   write (*,'(/,a)') "-------------------------------------"
   write (*,'(a,/,2x,a,/)') "Final String: ", str1
-
-
 
 end program convCase
 ```

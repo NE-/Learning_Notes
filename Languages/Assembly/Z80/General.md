@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 June 27
+  Author:  NE- https://github.com/NE-
+  Date:    2022 June 27
   Purpose: General notes for the Z80
 -->
 
@@ -29,7 +29,7 @@
 ## Index Registers (IX IY)
 - Used to get memory by specifying a relative position.
 - We use them with offsets e.g. IX+1 IX+2 IY+1 IY+2 etc.
--IXH (Hight) and IXL (Low) exist for us to use for whatever, but are slower than other registers.
+- IXH (High) and IXL (Low) exist for us to use for whatever, but are slower than other registers.
 ## Program Counter (PC)
 - Holds 16-bit address of current instruction being fetched from memory.
 - Automatically incremented after contents transferred to the address lines.
@@ -42,8 +42,8 @@
 - Can be used to get random numbers.
 ## Interrupt Page Address Register (I)
 - Can be operated in a mode which an indirect call to any memory location can be made in response to an interrupt.
-- Stores high order 8-bits  of the indirect address while interrupting device provides lower 8-bits.
-- Allows for interrupt routines  to be dynamically allocated to anywhere in memory with minimal access time. 
+- Stores high order 8-bits of the indirect address while interrupting device provides lower 8-bits.
+- Allows for interrupt routines to be dynamically allocated to anywhere in memory with minimal access time. 
 
 # Flags
 - Supply the user about status of Z80 CPU.
@@ -67,10 +67,10 @@
 - During `LD A,I` and `LD A,R` `P/V` set with value of `IFF2` (Interrupt Enable Flip-Flop) for storage or testing.
 - When inputting byte from I/O device with `IN r,(C)`, `P/V` adjusted to indicate data parity.
 ## Half Carry Flag (H)
-- Set or Cleared deending on the carry and borrow status between bits 3 and 4 of an 8-bit arithmetic operation.
-- Used by DAA to correct result of packed BCD add or sub operation.
-- Set if ADD Carry occurs from bit 3 to 4. SUB if a borrow from bit 4 occurs.
-- Reset if ADD no cCarry occurs from bit 3 to 4. SUB no borrow from bit 4 occurs.
+- Set or Cleared depending on the carry and borrow status between bits 3 and 4 of an 8-bit arithmetic operation.
+- Used by `DAA` to correct result of packed `BCD` add or sub operation.
+- Set if `ADD` Carry occurs from bit 3 to 4. `SUB` if a borrow from bit 4 occurs.
+- Reset if `ADD` no Carry occurs from bit 3 to 4. `SUB` no borrow from bit 4 occurs.
 ## Zero Flag (Z)
 - Set if result is 0, reset otherwise.
 - Arithmetic: set if Accumulator is 0.

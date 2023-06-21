@@ -1,6 +1,6 @@
 /*
-  Author: NE- https://github.com/NE-
-  Date: 2022 November 21
+  Author:  NE- https://github.com/NE-
+  Date:    2022 November 21
   Purpose: Bubble Sort implementation
  */
 
@@ -11,8 +11,8 @@
 /**
  * @brief Implementation of Bubble Sort
  * 
- * @param arr Integer array to be sorted
- * @param n   Length of the array
+ * @param arr - Integer array to be sorted
+ * @param n   - Length of the array
  * 
  */
 

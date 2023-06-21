@@ -1,6 +1,6 @@
 /*
-  Author: NE- https://github.com/NE-
-  Date: 2022 November 10
+  Author:  NE- https://github.com/NE-
+  Date:    2022 November 10
   Purpose: Linear Search implementation in C
  */
 
@@ -10,9 +10,9 @@
 /**
  * @brief Implementation of Linear Search
  * 
- * @param arr Integer array to be searched
- * @param n   Length of the array
- * @param val Element to be found
+ * @param arr - Integer array to be searched
+ * @param n   - Length of the array
+ * @param val - Element to be found
  * 
  * @return Index where element is stored
  *         -1 if element not found in array

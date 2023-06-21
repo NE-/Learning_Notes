@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 19
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 19
   Purpose: C++ Functions
 -->
 
@@ -9,7 +9,7 @@
 - Nested functions not supported.
 - If a function is set to return (non-void) and no return is given in the body, it causes undefined behavior.
   - Good compilers catch this anyway.
-  - main will implicitly return 0 if no return given.
+  - main() will implicitly return 0 if no return given.
   - Returning a value from a void function is a compiler error.
 
 # Parameters and Arguments
@@ -76,7 +76,7 @@ Color wall{ 0x23, 0x06, 0xA6, 0xFF };
 printColor(wall);
 
 // Pass pointer by reference
-// Read: Reference to a pointer to an integer
+// Read: Reference of a pointer to an integer
 void ptr_passRef(int*& ptr) {
   ptr = nullptr;
 }
@@ -262,7 +262,7 @@ int i{};
 - Use `mutable` to make the copies mutable.
 - The copies are also preserved!
 ```cpp
-int i{ 0 };
+int a{ 0 };
 
 auto inc{
   [a]() mutable {
@@ -277,7 +277,7 @@ std::cout << a; // prints 0
 ```
 - To actually change the outside variable, capture by reference
 ```cpp
-int i{ 0 };
+int a{ 0 };
 
 auto inc{
   [&a]() {
@@ -325,7 +325,7 @@ std::cout << a; // prints 2
 ```cpp
 // Until C++17
 [](auto vector){
-  using T =typename decltype(vector)::value_type;
+  using T = typename decltype(vector)::value_type;
   // use T
 };
 // since C++20:

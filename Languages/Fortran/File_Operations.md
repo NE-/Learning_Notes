@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 02
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 02
   Purpose: General Fortran (95/2003/2008) File Operation Notes.
 -->
 
@@ -20,7 +20,7 @@ open(
  | Clause | Explanation |
  | ------ | ----------- |
  | unit | Unit number for file operation (read, write, etc.). Typically integer between 10 and 99. |
- | file | Name of file to be open. Character literal or variable. |
+ | file | Name of file to open. Character literal or variable. |
  | status | Status of file.<br>"old": File must already exist.<br>"new": New file will be created.<br>"replace": New file will be created, replacing existing one if necessary. |
  | action | Action or open operation. <br>"read": Read data from file.<br>"write": write data to file.<br>"readwrite": Simultaneously read data from and write data to a file. |
  | position | Position or place to start.<br>"rewind": beginning.<br>"append": end. |
@@ -67,7 +67,7 @@ read (
   unit=  <unit number>,      &
   fmt=   <format statement>, &
   iostat=<variable>
-)                            &
+)
 <variables>
 ```
 - `unit` must be the same as `open`'s `unit` number.

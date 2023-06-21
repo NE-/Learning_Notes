@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 August 18
+  Author:  NE- https://github.com/NE-
+  Date:    2022 August 18
   Purpose: General notes for the x86-64 Branching instructions.
 -->
 
@@ -25,7 +25,7 @@
 | `jle` | Jump if <= zero | `jng` | ZF=1 or SF=1 |
 | `jc` | Jump if carry | `jb` `jnae` | CF=1 |
 | `jnc` | Jump if not carry | `jae` `jnb` | CF=0 |
-```asm
+```x86asm
 ;;; Sample 'if' statement
 
   ; Store variables in a register
@@ -43,7 +43,7 @@ ordered:
   ...
 ```
 
-```asm
+```x86asm
 ;;; Sample 'if-else' statement
 
   ; Store variables in a register
@@ -62,7 +62,7 @@ endif:
   ...
 ```
 
-```asm
+```x86asm
 ;;; Sample "if elif else" statement
 
   ; Store variables in a register
@@ -94,7 +94,7 @@ end_if:
 # Looping
 - In short, jumping backwards.
 
-```asm
+```x86asm
 ;;; Sample "while" loop
 ; Count set bits in a QW
 ;;;
@@ -125,7 +125,7 @@ end_while:
   ret
 ```
 
-```asm
+```x86asm
 ;;; Sample do-while loop
 ; Find a character in a string
 ;;;
@@ -157,7 +157,7 @@ found:
   ret
 ```
 
-```asm
+```x86asm
 ;;; Sample counting (for) loop
 ; Array addition
 ;;;
@@ -180,9 +180,9 @@ end_for:
 
 ## Loop Instruction
 - `loop` instruction decrements rcx and branches until rcx reaches 0.
-  - 5 times faster to just subtract 1 from rcx and use jnz instead!
+  - **5 times faster to just subtract 1 from rcx and use jnz instead**!
   - Limited to branching 8 bits (±127).
-```asm
+```x86asm
 ;;; Sample using loop
 ; Find right-most occurence of character in an array
 ;;;
@@ -203,7 +203,7 @@ found:
 - `rep` repeats string instruction n-times (specified in rcx).
 
 ### String Instructions
-- Suffixed with: b (1 byte),w (2 bytes),d (4 bytes),q (8 bytes) for element size. 1,2,4 bytequantities encoded in 1 byte and 8 byte encoded as 2 bytes (efficient!).
+- Suffixed with: b (1 byte),w (2 bytes),d (4 bytes),q (8 bytes) for element size. 1,2,4 byte quantities encoded in 1 byte and 8 byte encoded as 2 bytes (efficient!).
 - Use rax, rsi, and rdi for special purposes.
   - rax (eax, ax, al) holds specific value.
   - rsi source index.
@@ -217,7 +217,7 @@ found:
 - `movs` moves 2, 4, or 8 byte data from \[rdi\] to \[rsi\].
 - Data moved is not stored in a register and no flags are affeted.
 - After data moved, rdi and rsi are advanced 1,2,4, or 8 bytes (depending on data size).
-```asm
+```x86asm
 ;;; Sample movsb
 ; Move 100000 bytes from one array to another
 ;;;
@@ -234,7 +234,7 @@ rep movsb       ; Repeat a movsb until rcx is 0.
 - No flags affected.
 - Useful for filling arrays with a single value.
 - Useful for non-repeat loops for taking advantage of automatic destination register updating.
-```asm
+```x86asm
 ;;; Sample stosd
 ; Fill array of 1000000 DW with 1.
 ;;;
@@ -250,7 +250,7 @@ rep stosd              ; repeat stosd
   - Other variants move more data into ax, eax, or rax.
 - No flags affected.
 - Not many practical uses, however, `lods` can be used in loops taking advantage of automatic source register updating.
-```asm
+```x86asm
 ;;; Sample lodsb
 ; Copy data from 1 array to another removing characters equal to 13 (Carriage Return in ASCII).
 ;;;
@@ -275,7 +275,7 @@ skip:
 #### Scan
 - `scasb` searches array looking for a byte matching byte in al.
   - Uses rdi.
-```asm
+```x86asm
 ;;; Sample scasb
 ; C strlen implementation
 ;;;
@@ -291,9 +291,9 @@ strlen:
 ```
 
 #### Compare
-- `cmpsb` comapres values of 2 arrays.
+- `cmpsb` compares values of 2 arrays.
 - Used with `repe` which compare until ecx is 0 or two different values are located.
-```asm
+```x86asm
 ;;; Sample cmpsb
 ; C memcmp implementation
 ;;;
@@ -302,7 +302,7 @@ memcmp:
   mov rcx, rdx
   repe cmpsb              ; Compare until ecx is 0 or different value
   cmp rcx, 0              ; 0 - rcx
-  jz equal                ; If 0, then memory is equal (reached the end,, no differences).
+  jz equal                ; If 0, then memory is equal (reached the end; no differences).
   movzx eax, byte [rdi-1] ; Move with zeroes extended. -1 to prevent unneeded comparison.
   movzx ecx, byte [rsi-1] ; Move with zeroes extended. -1 to prevent unneeded comparison.
   sub rax, rcx            ; Use rax for return value (negative, zero, or positive).

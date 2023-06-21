@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 October 25
+  Author:  NE- https://github.com/NE-
+  Date:    2022 October 25
   Purpose: Insertion Sort Notes
 -->
 

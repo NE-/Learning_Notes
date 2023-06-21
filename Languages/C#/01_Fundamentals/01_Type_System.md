@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 October 12
+  Author:  NE- https://github.com/NE-
+  Date:    2022 October 12
   Purpose: C# Type System
 -->
 

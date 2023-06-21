@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 21
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 21
   Purpose: C++ Dynamic Memory
 -->
 
@@ -111,8 +111,6 @@ ptr = &a;
 
 ptr = new int;
 ptr = new int; // Previous allocation address is lost
-
-
 
 // Pointer out of scope. Address lost
 void allocate() {

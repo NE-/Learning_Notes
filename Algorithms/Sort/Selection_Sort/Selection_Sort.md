@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 October 24
+  Author:  NE- https://github.com/NE-
+  Date:    2022 October 24
   Purpose: Selection Sort Notes
 -->
 
@@ -25,7 +25,7 @@ let current = 1;   // Current index to check
 
   1 is part of the sorted partition.
 
-  varibales are now
+  variables are now
  */
 list = [1,8,5,3,9,4,2]
 min = 1;
@@ -44,7 +44,7 @@ current = 2;
 /*
   5 < 8 so that's the new minimum
   3 < 5 so that's the new minimum
-  2 < 5 so that's the new minimum
+  2 < 3 so that's the new minimum
   traversing complete so we swap
   8 and 2
 

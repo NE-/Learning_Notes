@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 October 26
+  Author:  NE- https://github.com/NE-
+  Date:    2022 October 26
   Purpose: Interpolation Search Notes
 -->
 

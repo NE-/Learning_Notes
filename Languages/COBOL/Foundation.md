@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 09
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 09
   Purpose: COBOL Foundation notes.
 -->
 

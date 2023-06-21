@@ -1,6 +1,6 @@
 ;;;
-;  Author: NE- https://github.com/NE-
-;  Date: 2022 November 04
+;  Author:  NE- https://github.com/NE-
+;  Date:    2022 November 04
 ;  Purpose: Binary Search implementation in 6502 Assembly
 ;
 ;  Notes: Compiled and ran with easy6502 simulator

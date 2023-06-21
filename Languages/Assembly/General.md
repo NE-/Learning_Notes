@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 June 27
+  Author:  NE- https://github.com/NE-
+  Date:    2022 June 27
   Purpose: General notes to get started on assembly language programming
 -->
 
@@ -33,8 +33,8 @@
 
 ### Base Pointer
 - Used for efficiently traversing a memory range or to keep track of the start of a subroutine's stack frame.  
-`Base Pointer $1234 + offset 1 = $1235`.
-`Base Pointer $1235 + offset 1 = $1236`
+- `Base Pointer $1234 + offset 1 = $1235`.
+- `Base Pointer $1235 + offset 1 = $1236`
 
 ### Index Registers (IR)
 - Usually used for memory traversing.
@@ -63,7 +63,7 @@
 
 #### Carry Flag (C)
 - Mostly used with *unsigned* numbers.
-- Set when the result was too big to store in the register or if the result of a subtraction was negative
+- Set when the result was too big to store in the register or if the result of a subtraction was negative.
 - Commonly used with shifting and rotating.
 - Useful for combining registers to store larger values than a single register can contain e.g. on 8-bit systems, we combine two registers to store 16-bit numbers.
 
@@ -88,11 +88,9 @@
 - Set if the last instruction was a subtraction, reset if it was addition.
 - Common when using binary coded decimal mode.
 
-
-
 # Memory
 - Storage for software.
-- Referred to by a numeric address (usually 1 byte).
+- Referred to by a numeric address.
 - *Address Bus* - wires that connect the CPU to Memory.
 - *Bank Switching* - memory map "switches" between areas of memory. Useful for accessing more memory than within a given confined space.
 - *Memory Mapped Ports* - We can access I/O ports from a normal memory space rather than with special commands. Machine dependent.
@@ -102,7 +100,7 @@
 ### Zero/Direct Page
 - The first 256 bytes of memory (all have `$00` high byte; `$0000` - `$00FF`).
 - Read and write is faster than memory, but slower than registers.
-- We can omit the high `$00` byte when referencing this part of memory. This reults in a 1-byte call which is why it's faster to compute!
+- We can omit the high `$00` byte when referencing this part of memory. This results in a 1-byte call which is why it's faster to compute.
 - AKA the *Direct Page* on systems with a Direct Page Register (D). ***The direct page might not always start on `$00`***
 
 ## ROM
@@ -125,7 +123,7 @@
 ## Maskable (AKA IRQ - Interrupt Request)
 - These are interrupts that can be disabled. Usually by setting a bit in the IMR.
 - Maskable because they are safe to give lower priority without any repercussions.
-- Higher response times than NMIs
+- Higher response times than NMIs.
 ## Non-Maskable (NMI)
 - Cannot be disabled or ignored (CPU dependent).
 - Used for high priority tasks (e.g. critical response time is needed) that can crash a system if interrupted.

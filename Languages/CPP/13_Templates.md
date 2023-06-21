@@ -1,11 +1,11 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 20
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 20
   Purpose: C++ Templates
 -->
 
 # Templates
-- Used to mkae one thing work with many different data types rather than typing a lot of overloaded functions or classes.
+- Used to make one thing work with many different data types rather than typing a lot of overloaded functions or classes.
 ```cpp
 // Example basic template class
 
@@ -102,8 +102,7 @@ class A {
   It should NOT just make
   one for every existing type!
 
-  That's where the error comes
-  in.
+  That's where the error comes in.
  */
 template<typename T>
 T A<T>::getA() const {
@@ -250,7 +249,7 @@ A<float> a; // OK
     - If **any** constraint is satisfied, the entire clause is `true`.
       - Uses `||`. Evaluated LtR and short-circuited.
   - Atomic
-    - Use boolean primary expressions rather than logical AND or OR. If the expression is true, the constrsint is satisfied.
+    - Use boolean primary expressions rather than logical AND or OR. If the expression is true, the constraint is satisfied.
 ```cpp
 /*
   Conjunction
@@ -267,8 +266,8 @@ concept SignedInt = std::is_signed<T>::value;
 
   concept SignedInt = Integral<T> && std::is_signed<T>::value;
 
-  but change requires to
-  requires SignedInt
+  but change requires Integral<T> && SignedInt<T>
+  to requires SignedInt
  */
 
 template<typename T>
@@ -298,8 +297,8 @@ concept SignedInt = std::is_signed<T>::value;
 
   concept SignedInt = Integral<T> || std::is_signed<T>::value;
 
-  but change requires to
-  requires SignedInt
+  but change requires Integral<T> || SignedInt<T>
+  to requires SignedInt
  */
 
 template<typename T>

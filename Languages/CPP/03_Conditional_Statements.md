@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 19
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 19
   Purpose: C++ Conditional Statements
 -->
 
@@ -22,9 +22,9 @@
   - Associativity LtR
 
   Returns:
-    (x <=> y)  < 0 if x  < y // Less
-    (x <=> y)  > 0 if x  > y // Greater
-    (x <=> y) == 0 if x == y // Equal
+    (x <=> y)  < 0 if x  < y // ::less
+    (x <=> y)  > 0 if x  > y // ::greater
+    (x <=> y) == 0 if x == y // ::equal
     
     Must use std::strong_ordering for integerals,
     std::partial_ordering for floating-point

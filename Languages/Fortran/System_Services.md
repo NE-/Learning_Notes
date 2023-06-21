@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 06
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 06
   Purpose: General Fortran (95/2003/2008) System Services Notes.
 -->
 
@@ -18,6 +18,7 @@
  | time | character(10) | String returned. Format HHMMSS.SSS |
  | zone | character(5) | String returned. Format ±HHMM (difference between local and Coordination Universal Time) |
  | values | integer array (8 elements) | values(1) -> year<br>values(2) -> month (1-12)<br>values(3) -> date (1-31)<br>values(4) -> time zone difference (minutes)<br>values(5) -> hour (0-23)<br>values(6) -> minutes (0-59)<br>values(7) -> seconds (0-59)<br>values(8) -> milliseconds (0-999) |
+
 - Each argument is optional, but at least one argument must be included
 ```fortran
 ! Example obtain date and time information from system
@@ -71,7 +72,7 @@ end program datetime
 integer :: argc
 argc = command_argument_count()
 ```
-- `get_command_argument()` returns entered aruments as strings.
+- `get_command_argument()` returns entered arguments as strings.
   - If character variable is too small, returned result is truncated and the status is set accordingly to indicate an error.
  
  | Option | Data Type | Description |
@@ -160,8 +161,8 @@ end program argsEx
 
 ## Random Number Generation
 - `random_seed()` initializes random number generator. 
-  - No arguments uses seed from random data retrieved from the OS (based on date and time).
-  - Can only be perfored once.
+  - No arguments. Uses seed from random data retrieved from the OS (based on date and time).
+  - Can only be performed once.
 
  | Option | Data Type | Description |
  | ------ | --------- | ----------- |

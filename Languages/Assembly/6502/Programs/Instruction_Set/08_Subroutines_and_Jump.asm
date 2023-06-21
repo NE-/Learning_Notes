@@ -1,6 +1,6 @@
 ;;
-; Author: NE- https://github.com/NE-
-; Date: 2022 July 19
+; Author:  NE- https://github.com/NE-
+; Date:    2022 July 19
 ; Purpose: Testing out the Subroutine and Jump group
 ;;
 
@@ -23,8 +23,8 @@ JMP MyLoop ; 01001100 <varies>
 JSR MyLoop ; 00100000 <varies>
 
 ;; RTS
-; Return from subroutine (where it called with JSR).
-;; PC altered with value from the top off the stack.
+; Return from subroutine.
+;; PC altered with value from the top of the stack.
 ; Assembled as: 01100000
 ; 1 Byte 6 Cycles
 RTS ; 01100000

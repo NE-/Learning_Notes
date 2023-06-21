@@ -1,6 +1,6 @@
 <!--
-  Author: @NE- https://github.com/NE-
-  Date: 2022 July 06
+  Author:  @NE- https://github.com/NE-
+  Date:    2022 July 06
   Purpose: General notes for the ARM processor
 -->
 

@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 October 25
+  Author:  NE- https://github.com/NE-
+  Date:    2022 October 25
   Purpose: Algorithm Complexity and Analysis Notes
 -->
 
@@ -14,8 +14,9 @@
 
 ## Big Omega Ω
 - **Asymptotic. Lower bound. Worst case. Imprecise**
-- Analogy `>=`
-- ω rare; not important. `g(n) = o(f(n))` Analogy `>`.
+- Analogy: `>=`
+- ω rare; not important. `g(n) = o(f(n))`
+  - Analogy: `>`
 - For large enough *n*, time at least `k*f(n)` for constant *k*.
 
 ## Big O
@@ -75,7 +76,7 @@ for (
 --[[ 
   Entire statement is n^2 
   regardless whether program
-  executes if or else
+  only executes if or else block
 --]]
 if a < b then
   a = 1 -- 1

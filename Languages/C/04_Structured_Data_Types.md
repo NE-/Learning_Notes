@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 13
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 13
   Purpose: C Structured Data Types
 -->
 

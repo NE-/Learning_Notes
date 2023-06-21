@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 01
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 01
   Purpose: General Fortran (95/2003/2008) Selection Statements.
 -->
 

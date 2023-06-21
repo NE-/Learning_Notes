@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 07
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 07
   Purpose: COBOL General notes.
 -->
 

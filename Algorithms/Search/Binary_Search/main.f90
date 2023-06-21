@@ -1,3 +1,9 @@
+!!!
+! Author:  NE- https://github.com/NE-
+! Date:    2022 November 04
+! Purpose: Binary Search implementation in Fortran
+!!!
+
 program BinSearch
   implicit none
 
@@ -15,8 +21,15 @@ program BinSearch
 
 
 contains
-  ! @param Integer array to be searched
-  ! @param x Element to find
+  !!!
+  ! @brief Implementation of Binary Search
+  ! 
+  ! @param arr - Integer array to be searched
+  ! @param x   - Element to be found
+  ! 
+  ! @return Index where element is stored
+  !         -1 if element not found in array
+  !!!
   integer function BinarySearch(arr, x) result(retVal)
     implicit none
     integer, intent(in) :: arr(:), x

@@ -1,6 +1,6 @@
 ;;
-; Author: NE- https://github.com/NE-
-; Date: 2022 July 14
+; Author:  NE- https://github.com/NE-
+; Date:    2022 July 14
 ; Purpose: Testing out the arithmetic group
 ;;
 

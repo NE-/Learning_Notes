@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 06
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 06
   Purpose: ARM64 Register notes.
 -->
 
@@ -18,7 +18,7 @@
     - **Dx** is 64-bits.
     - **Qx** is 128-bits.
   - **V** registers treated as *vector*.
-```asm
+```arm
 // Vector float addition
 FADD V0.2D, V1.2D, V2.2D
 // Vector integer addition
@@ -45,7 +45,7 @@ ADD V0.2D, V1.2D, V2.2D
 - Used to configure processor and control systems such as MMU and exception handling.
 - Can't be used directly by data processing or load/store instructions.
   - Have to be read into *X* register, operated on, then written back to system register.
-```asm
+```arm
 // Two specialist instructions for accessing system registers
 
 MRS Xd, <system register> // Read sysreg into Xd

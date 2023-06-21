@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 19
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 19
   Purpose: C++ Strings
 -->
 

@@ -1,6 +1,6 @@
 ;;
-; Author: NE- https://github.com/NE-
-; Date: 2022 June 29
+; Author:  NE- https://github.com/NE-
+; Date:    2022 June 29
 ; Purpose: Testing out the 8-Bit Arithmetic Group
 ;;
 

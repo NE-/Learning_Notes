@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 October 26
+  Author:  NE- https://github.com/NE-
+  Date:    2022 October 26
   Purpose: Merge Sort Notes
 -->
 
@@ -81,5 +81,5 @@ MergeSort(array, 0, n-1)
 ```
 
 # Performace
-- Merge takes N, log N for the binary tree the splitting produces.
+- Merge takes N; log N for the binary tree produced by the splitting process.
 - **O**(n log n)

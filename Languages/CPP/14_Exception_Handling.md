@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 21
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 21
   Purpose: C++ Templates
 -->
 
@@ -61,7 +61,6 @@ catch(double x) {
 // MUST be last
 catch(...) {
   std::cerr << "Caught something, but we don't know what type";
-
 }
 ```
 - Catch-all used mostly to ignore exceptions we never meant to throw, catch anything abnormal, or catch library throws we have no control over.
@@ -128,12 +127,10 @@ catch(const std::exception& e) {
 std::cout << "Hello from line " << __LINE__ << '\n';
 
 /** To be more specific **/
-
-```cpp
 try {
   std::string{"qwe"}.substr(10);
 } 
-catch(const std::out_of_range& e) {
+catch(const std::out_of_range& e) { // Change: std::out_of_range
   cout << e.what() << '\n';
 }
 
@@ -163,7 +160,7 @@ std::size_t validateIndex(std::size_t i) {
 try {
   validateIndex(99);
 }
-// This one called since it's a base of std::out_of_range
+// This one is called since it's a base of std::out_of_range
 // Compiler warns about it
 catch(const std::exception& e) {
   cout << "std::exception\n";
@@ -171,7 +168,6 @@ catch(const std::exception& e) {
 catch(const std::out_of_range& e) {
   cout << "std::out_of_range\n";
 }
-
 
 // Test 2
 std::size_t validateIndex(std::size_t i) {
@@ -185,8 +181,8 @@ std::size_t validateIndex(std::size_t i) {
 try {
   validateIndex(99);
 }
-// This one called since checks go one-by-one
-// and this is first valid exception
+// This one is called since checks go one-by-one
+// and this is the first valid exception
 catch(const std::out_of_range& e) {
   cout << "std::out_of_range\n";
 }
@@ -241,7 +237,6 @@ catch(const MyException& e) {
 - Specifier that tells us a function will not (or can't) throw an exception.
 - Can help the compiler optimize the function further, but it is often abused or overused which can cause more harm than good (early termination).
   - If you truly know your function won't throw an exception anywhere it's used (especially with other libraries you don't know the inner workings of), then add `noexcept`; otherwise omit it.
-
 - If a function doesn't throw an exception, the compiler will "bare" it, else it will add `std::terminate` (reason for "terminate called after throwing..." message).
   - In code, exceptions will not be caught regardless if it's in a try-catch block and just treminate the program.
 - `noexcept` preferred over `throw(<exception-list>)`.

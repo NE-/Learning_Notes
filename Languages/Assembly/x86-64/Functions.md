@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 August 19
+  Author:  NE- https://github.com/NE-
+  Date:    2022 August 19
   Purpose: General notes for x86-64 Functions.
 -->
 
@@ -18,7 +18,7 @@
 ## Call
 - `call` used to call a function.
 - Pushes address of the instruction following the call onto the stack (AKA *return address*) and transfer control to address associated with the called function.
-```asm
+```x86asm
 ;;; Basic implementation of call
 ; Best to just use call
 ;;;
@@ -53,7 +53,7 @@ next_instruction:
   - Executing `call` would decrement rsp by 8, making it end in 0x8.
     - Conforming functions should either push or subtract from rsp to get it back to a 16 byte boundary. Used with function call inside a function.
 - Number of floating point parameters required in a function call (e.g. printf scanf) are stored in rax.
-```asm
+```x86asm
 ;;; Sample system function call
 ; Hello World example
 ;;;
@@ -79,11 +79,11 @@ main:
 ## Stack Frame
 - Start with standard `push rbp mov rbp, rsp`.
   - Creates a linked list of objects (function invocation) on the stack.
-    - Greatefor the debugger: allows for backtracing, identifying functions, and line number.
+    - Great for the debugger: allows for backtracing, identifying functions, and line number.
 - End with `mov rsp, rbp pop rbp` (opposite of prologue).
 - If too many local variables or functions call other functions, you may need to allocate space on stack.
   - Subtract from rsp to allocate.
-  ```asm
+  ```x86asm
   ;;; Sample allocate on stack
   push rbp
   mov rbp, rsp
@@ -97,7 +97,7 @@ main:
 ### Variables
 - Referenced using rbp.
   - Uses right-to-left calling convention (CDECL) so the left-most argument will be at the top.
-```asm
+```x86asm
 ;;; Rough stack representation. Assume 8 byte bounded stack.
 [rbp+32] ; 3rd argument
 [rbp+24] ; 2nd argument
@@ -115,7 +115,7 @@ main:
 
 ## Recursion
 - Generally require stack frames with local variable storage for each stack frame.
-```asm
+```x86asm
 ;;; Sample recursion
 ; Computes n!
 ;;;

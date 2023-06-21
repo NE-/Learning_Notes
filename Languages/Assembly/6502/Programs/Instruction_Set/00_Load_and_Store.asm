@@ -1,11 +1,11 @@
 ;;
-; Author: NE- https://github.com/NE-
-; Date: 2022 July 13
+; Author:  NE- https://github.com/NE-
+; Date:    2022 July 13
 ; Purpose: Testing out the load and store group
 ;;
 
 ;; LDA
-; Loads contents of selected memory byte into Accumulator.
+; Load contents of selected memory byte into Accumulator.
 ; Assembled as: 101 aaa 01 
 ;; Immediate:    010 [2 Bytes 2 Cycles]
 ;; ZP:           001 [2 Bytes 3 Cycles]

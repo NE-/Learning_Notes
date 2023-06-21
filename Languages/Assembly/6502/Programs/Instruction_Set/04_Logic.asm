@@ -1,6 +1,6 @@
 ;;
-; Author: NE- https://github.com/NE-
-; Date: 2022 July 16
+; Author:  NE- https://github.com/NE-
+; Date:    2022 July 16
 ; Purpose: Testing out the logic group
 ;;
 

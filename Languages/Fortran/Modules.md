@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 05
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 05
   Purpose: General Fortran (95/2003/2008) Modules Notes.
 -->
 
@@ -64,7 +64,7 @@ end program average
 
 ## Compilation
 - `gfortran -c stats.f95`
-  - `-c` Compile, asseble, but don't link. Makes object (.o) and module (.mod) files.
+  - `-c` Compile, assemble, but don't link. Makes object (.o) and module (.mod) files.
 - `gfortran -o myexe main.f95 stats.o`
   - *.mod* files are **required** for compilation.
 ---
@@ -131,7 +131,7 @@ end module sphereRoutines
 ```
 
 ## Compilation
-```
+```console
 gfortran -c sphereroutines.f95
 gfortran -o modmain modmain.f95 sphereroutines.o
 ```

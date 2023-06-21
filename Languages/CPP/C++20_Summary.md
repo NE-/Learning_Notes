@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 22
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 22
   Purpose: C++20 Concepts Summary
            Refer to https://en.cppreference.com/w/
            for details.
@@ -44,7 +44,7 @@ int main(int, char*[]) {
 # Coroutines
 - Functions that suspend execution to be resumed later.
 - Stackless: suspend execution by returning to caller and the data required to resume execution is stored seperately from the stack.
-  - Allows asynchronouos code execution.
+  - Allows asynchronous code execution.
   - State stored in *heap* instead of stack.
 - A function is a coroutine if it contains any of the following:
   - `co_await`: suspend execution until resumed.

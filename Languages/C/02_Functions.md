@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 13
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 13
   Purpose: C Functions
 -->
 
@@ -8,7 +8,7 @@
 - Nested functions are not supported to improve the run-time performance of C.
 
 # Function Jargon
-- **Declaration**: When aname has a type associated with it .
+- **Declaration**: When a name has a type associated with it .
 - **Definition**: Also a declaration, but storage is reserved for the named object.
   - For functions, when a body is provided.
 - **Formal parameters**: Names used inside a function to refer to its parameters.
@@ -18,15 +18,15 @@
 - Biggest change in newer C standard.
 - Function arguments are mandatory, but only used for backwards compatibility with old C and should be avoided.
 
-# Argument COnversions
+# Argument Conversions
 ## Default
-- Int promotions always applcable.
+- Int promotions always applicable.
 - If argument is `float`, converted to `double`.
 ## Standard
 - When function is called without a prototype in scope, args undergo default argument promotions.
   - If number of arguments does not agree with number formal parameters to the function, behavior is undefined.
-  - If function definition was not definition containing a prototype, then type of actual arguments after promotion must be compatible with types of formal parameters in definition after promotions applied. Otherwise, undefuned behavior.
-  - If function definition was definition containing prototype, and all types of sctual arguments after promotion are not compatible with formal parameters in prototype, then behavior is undefined. Behavior is also undefined if prototype includes ellipsis.
+  - If function definition was not definition containing a prototype, then type of actual arguments after promotion must be compatible with types of formal parameters in definition after promotions applied. Otherwise, undefined behavior.
+  - If function definition was definition containing prototype, and all types of actual arguments after promotion are not compatible with formal parameters in prototype, then behavior is undefined. Behavior is also undefined if prototype includes ellipsis.
 - At point of calling function, if prototype is in scope, arguments are converted, as if by assignment, to types specified in prototype. Any args from ellipsis still undergo default argument conversions.
 
 # Recursion

@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 August 20
+  Author:  NE- https://github.com/NE-
+  Date:    2022 August 20
   Purpose: General notes for x86-64 Arrays.
 -->
 
@@ -12,7 +12,7 @@
 - Arrays in text and data segments it's possible to use labels along with index register with a multiplier for element size (1, 2, 4, or 8).
 - Arrays passed to functions, address must be in a register; therefore, using labels is not possible.
   - Instead, use use base register with index register (can use any of 16 general purpose, except SP as index register).
-```asm
+```x86asm
 ;;; Sample arrays
 ; Copy array into another in a function.
 ;;;
@@ -38,7 +38,7 @@ more:
 ## Allocation
 - Allocate memory when array size will not be known during run-time.
 - Faster to assemble and link with large sized arrays. Executable is also smaller.
-```asm
+```x86asm
 ;;; Sample allocation with malloc
 extern malloc
 ...
@@ -47,7 +47,7 @@ call malloc
 mov [pointer], rax ; rax holds pointer (of allocated memory) returned by malloc.
 ```
 
-```asm
+```x86asm
 ;;; Sample array processing
 ; Allocate array and fill with random numbers then compute minimum
 ;;;
@@ -177,7 +177,7 @@ main:
   - First parameter is always name of executable being run.
 - **argv** is passed by placing address of first element in register or stack.
   - **argv**'s address is in rsi.
-```asm
+```x86asm
 ;;; Sample Command Line Parameters
 ; Prints all argv contents
 ;;;
@@ -209,6 +209,3 @@ end_loop:
   leave
   ret
 ```
-
-
-

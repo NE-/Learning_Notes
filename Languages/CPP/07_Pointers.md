@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 19
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 19
   Purpose: C++ Pointers
 -->
 
@@ -11,8 +11,8 @@
 ```cpp
 int i{0};
 
-std::cout << i;  // 0
-std::cout << &i; // memory address of i (varies)
+std::cout << i;     // 0
+std::cout << &i;    // memory address of i (varies)
 std::cout << *(&i); // Value held in memory address of i. 0 in this case
 ```
 
@@ -81,7 +81,7 @@ const int* p;
 int const* p;
 
 /*
-  Constant poiner to an int
+  Constant pointer to an int
  */
 int* const p;
 

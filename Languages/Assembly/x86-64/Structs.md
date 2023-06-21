@@ -1,12 +1,12 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 August 28
+  Author:  NE- https://github.com/NE-
+  Date:    2022 August 28
   Purpose: General notes for x86-64 Structs.
 -->
 
 # Structs
 - Basically keep track of the offsets of each struct item.
-```asm
+```x86asm
 ;;; C struct in assembly
 ; struct {
 ;   int id;
@@ -34,7 +34,7 @@ mov [rax+132], edx ; set balance
 ## Symbolic Names for Offsets
 - Having literals is bad practice, so we use symbolic names instead.
 - In yasm, start a struct with `struc` and close it with `endstruc`.
-```asm
+```x86asm
         struc Customer
 id      resb  1
 name    resb  64
@@ -43,7 +43,7 @@ balance resd  1
         endstruc
 ```
 - Doing the above makes the names **global**, so we have to prefix them.
-```asm
+```x86asm
 ;; Prefixing prevents global names
         struc Customer
 .id      resb  1
@@ -56,7 +56,7 @@ balance resd  1
 Customer.id
 ```
 - yasm also defines `Customer_size` to be number of bytes in the struct (good for memory allocation).
-```asm
+```x86asm
 ;; Struct initialization example
         segment .data
 name    db    "Calvin", 0
@@ -96,7 +96,7 @@ main:   push rbp
         ret
 ```
 - Alignment is different from C; 1 byte larger increases offset by 4 (C) assembly increases by 1.
-```asm
+```x86asm
 ;;; C-aligned struct
 c istruc Customer
   iend
@@ -115,7 +115,7 @@ c  istruc  Customer
   - quad word fields must be aligned by 8 for the size to be a multiple of 8.
   - double word align 4.
   - word align 2.
-```asm
+```x86asm
 ;;; Allocating an array of structs
 
           segment .data

@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 14
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 14
   Purpose: C Preprocessor
 -->
 
@@ -56,7 +56,7 @@ CALL(,"hello");
 
 printf("%d\n", DBL(2));
 /** expands to **/
-printf("%d\n", 2*2);
+printf("%d\n", 2+2);
 
 printf("%d\n", 3 * DBL(2));
 /** expands to **/
@@ -71,8 +71,6 @@ SQR(3+4); // Expands to 3+4 * 3+4. 3 + 12 + 4
 #define DBL(x) (x) + (x)
 #define SQR(x) (x) * (x)
 ```
-
-
 
 ### Stringizing
 - Using '#' "stringizes" a token. Trailing whitespace discarded.
@@ -120,7 +118,7 @@ m(m((abc+1))+1);
 
 ## include Directive
 - At least 8 nested levels supported.
-- In regards to file name, upper and lowercase distinctions may be ignored and implementations may only use siz significant characters before the '.' character.
+- In regards to file name, upper and lowercase distinctions may be ignored and implementations may only use size significant characters before the '.' character.
 ```c
 #include <stdlib.h> // Search system libs
 #include "myfile.h" // Search project
@@ -151,7 +149,7 @@ __STDC__ // Integer constant '1'.
 - Used for selective compilation or ignoring depending on met condition(s).
 - Useful for compiling machine-dependent code.
 ```c
-#ifedf NAME
+#ifdef NAME
   /* Compile this if NAME defined */
 #endif
 #ifndef NAME2

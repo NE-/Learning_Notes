@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 16
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 16
   Purpose: C Libraries
 -->
 
@@ -155,7 +155,7 @@ void func() {
     - *Interrupt*
   - **SIGSEGV**: Invalid storage access (usually caused by storing value in object pointed by a bad pointer).
     - *Segment Violation*
-  - **SIGTERM**: Termination reauest made to the program.
+  - **SIGTERM**: Termination request made to the program.
     - *Terminate*
 - `signal` function allows you to specify action taken on receipt of a signal. Returns pointer to another function.
 ```c

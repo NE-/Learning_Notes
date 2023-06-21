@@ -1,11 +1,11 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 October 24
+  Author:  NE- https://github.com/NE-
+  Date:    2022 October 24
   Purpose: Linear Search Notes
 -->
 
 # Linear Search Overview
-- Like most search algorithms, list does not have to be sorted.
+- Unlike most search algorithms, list does not have to be sorted.
 - Useful for data structures that do not have random access.
 - Traverse list from beginning until element is found.
 

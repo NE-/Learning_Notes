@@ -1,12 +1,12 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 October 25
+  Author:  NE- https://github.com/NE-
+  Date:    2022 October 25
   Purpose: Quick Sort Notes
 -->
 
 # Quicksort Overview
 - Uses divide-and-conquer approach and utilizes a pivot.
-  - Pivot should end up in correct position in the final soretd array.
+  - Pivot should end up in correct position in the final sorted array.
   - Items to the left of pivot are smaller/less than.
   - Items to the right of pivot are larger/greater than.
     - *At this stage, order does not matter as long as the two rules are satisfied*.
@@ -14,7 +14,7 @@
 - After, we break the array into two segments: elements that were on the left and right of pivot.
   - Keep track of start and end of segments!
 - Repeat partioning of the segmented lists.
-- New segments will be created and partitioning and breaking repeats until we have only one element remaining.
+- New segments will be created, and partitioning and breaking repeats until we have only one element remaining.
 - Best for in-memory sorting (O(1) space).
 
 ## Choosing a Pivot
@@ -47,6 +47,6 @@ end
 
 
 # Performance
-- **O**(log n) average **O**(n log n).
+- **O**(log n). average **O**(n log n).
 - Worst n<sup>2</sup> which can be prevented with randomized partition version.
-- Ananlysis based on a binary tree since we segment the array.
+- Analysis based on a binary tree since we segment the array.

@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 August 27
+  Author:  NE- https://github.com/NE-
+  Date:    2022 August 27
   Purpose: General notes for x86-64 System Calls.
 -->
 
@@ -11,8 +11,8 @@
 ## 32 Bit System Calls
 - Defined in **/user/include/asm/unistd_32.h**.
 - To execute a syscall, place syscall number in `eax` and use software interrupt instruction to effect the call (`int 0x80`).
-  - Parameters placed in `ebx ecx edx esi edi ebp`. Returnvalue placed in `eax`.
-```asm
+  - Parameters placed in `ebx ecx edx esi edi ebp`. Return value placed in `eax`.
+```x86asm
 ; STDOUT call example
 
        segment .data
@@ -33,7 +33,7 @@ hello: db "Hello World!",0x0a
 - Syscall number placed in `rax`, parameters in `rdi rsi rdx r10 r8 r9`, return value in `rax`.
   - Registers same in C function calls except `r10` replaced `rcx` for parameter 4.
 - Instead of `int 0x80`, x86-64 Linux uses `syscall` instruction.
-```asm
+```x86asm
 ; 64 bit Hello World
         segment .data
 hello:  db "Hello World!",0x0a
@@ -55,7 +55,7 @@ _start:
 - Using C wrapper functions over explicit `syscall` is preferred way to use system calls.
   - Don't have to worry about finding numbers.
   - Don't have to deal with different register usage.
-```asm
+```x86asm
 ; 64 bit Hello World using C wrapper functions
 
       segment .data
@@ -79,9 +79,9 @@ main:
 - Open files.
 ```C 
 /**
-  @param[in] pathname Character array terminated with a 0 byte.
-  @param[in] flags    Bit patterns that determine how the file will be opened. OR'd together.
-  @param[in] mode     If file is to be created, mode defines permissions (rwx) to assign the file.
+  @param[in] pathname - Character array terminated with a 0 byte.
+  @param[in] flags    - Bit patterns that determine how the file will be opened. OR'd together.
+  @param[in] mode     - If file is to be created, mode defines permissions (rwx) to assign the file.
 
   @return File descriptor index or negative number on failure.
  */
@@ -96,7 +96,7 @@ int open(char* pathname, int flags [,int mode]);
  | 0x40 | create if needed |
  | 0x200 | truncate the file |
  | 0x400 | append |
-```asm
+```x86asm
 ; Sample file open
 
       segment .data
@@ -119,21 +119,21 @@ name: db "sample",0
 ## Read and Write System Calls
 ```C
 /**
-  @param[in] fd    File descriptor to read from.
-  @param[in] buf   Read into buffer.
-  @param[in] count Read up to count bytes.
+  @param[in] fd    - File descriptor to read from.
+  @param[in] buf   - Read into buffer.
+  @param[in] count - Read up to count bytes.
 
   @return Number of bytes read (0 indicates EOF) or -1 on failure.
-  */
+ */
 int read(int fd, void *buf, size_t count);
 
 /**
-  @param[in] fd    File descriptor to write to.
-  @param[in] buf   Write from buffer.
-  @param[in] count Write up to count bytes.
+  @param[in] fd    - File descriptor to write to.
+  @param[in] buf   - Write from buffer.
+  @param[in] count - Write up to count bytes.
 
   @return Number of bytes written or -1 on failure (errno set).
-  */
+ */
 int write(int fd, void *buf, size_t count);
 ```
 
@@ -141,20 +141,20 @@ int write(int fd, void *buf, size_t count);
 - Repositions file offset before read/write.
 ```C
 /**
-  @param[in] fd File Descriptor.
-  @param[in] offset Offset position in bytes.
-  @param[in] whence Directive:
-                    SEEK_SET set to "offset" bytes.
-                    SEEK_CUR set to current location plus "offset" bytes.
-                    SEEK_END set to size of file plus "offset" bytes.
+  @param[in] fd     - File Descriptor.
+  @param[in] offset - Offset position in bytes.
+  @param[in] whence - Directive:
+                        SEEK_SET set to "offset" bytes.
+                        SEEK_CUR set to current location plus "offset" bytes.
+                        SEEK_END set to size of file plus "offset" bytes.
 
   @return Offset location in bytes from beggining of file or -1 on failure (errno set).
-  */ 
+ */ 
 off_t lseek(int fd, off_t offset, int whence);
 ```
 - Using `lseek` with offset 0 and *whence* 2 returns byte position 1 greater than last byte of file (easy way to determine file size).
   - Knowing size helps with memory allocation for reading entire file.
-```asm
+```x86asm
 ; Get file size and allocate memory.
 
 mov edi, [fd]
@@ -181,13 +181,13 @@ call read
     - Still good to always close a file because reduces overhead in kernel and avoids per-process limit on number of open files.
 ```C
 /**
-  @param[in] fd File descriptor to close.
+  @param[in] fd - File descriptor to close.
 
   @return 0 on success or -1 on failure (errno set).
-  */
+ */
 int close(int fd);
 ```
-```asm
+```x86asm
 mov edi, [fd]
 call close
 ```

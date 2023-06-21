@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 20
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 20
   Purpose: C++ Object Relations
 -->
 
@@ -12,7 +12,7 @@
   - Member belongs to the class.
   - Member belongs to only one class at a time (can't reuse the instantiated object outside the class).
   - Member is managed by the class (nothing outside can influence the member).
-  - member doesn't know about the entire class itself. The class knows about the member, but not the other way around (known as unidirectional relationship).
+  - Member doesn't know about the entire class itself. The class knows about the member, but not the other way around (known as unidirectional relationship).
 ```cpp
 // Part-of example
 class Vec2D {
@@ -95,7 +95,7 @@ std::vector<
   - Member is unrelated to the class.
   - Member can belong to more than one class at a time.
   - Member is not managed by the class.
-  - Member may or may not know about the existence of the class ( can be uni- or bidirectional. This is how it differs from aggregation).
+  - Member may or may not know about the existence of the class (can be uni- or bidirectional. This is how it differs from aggregation).
 - Usually implemented with pointers, but depends on context.
 ```cpp
 class Client {
@@ -200,7 +200,7 @@ cs4.getAllPrereq();
 - One class is built upon the definitions of another.
 - **"Is-a"** relationship.
 - With derived classes, top-most base class is built first then goes down the "family tree;" destruction starts at the bottom-most child and goes up the "family tree."
-- Inherited classes do not have acces to parent's private members.
+- Inherited classes do not have access to parent's private members.
 - Only parent constructors can be called from a child (no child nor grandparents).
 ```cpp
 class Animal {

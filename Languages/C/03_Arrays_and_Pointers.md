@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 13
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 13
   Purpose: C Arrays and Pointers
 -->
 
@@ -34,8 +34,10 @@ int threeD[5][4][3];
 ```c
 // Pointer to ar's index 3.
 int *p = &ar[3];
+
 // Assign ar[4] to 0
 *(p+1) = 0; 
+
 // Initialize array
 /*
   Faster for sequential access
@@ -203,4 +205,4 @@ char* str   = "hello"; // Auto null
 char str[]  = "hello"; // Auto null
 char str[5] = "hello"; // No auto null since limit reached
 char str[6] = "hello"; // Auto null since have extra space
-
+```

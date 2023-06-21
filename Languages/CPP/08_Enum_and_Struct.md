@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 19
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 19
   Purpose: C++ Enum and Struct
 -->
 
@@ -92,7 +92,7 @@ enum Apple {
 };
 
 Color wall{ unknown }; // ERROR "unknown" not declared in this scope
-color floor{ Color::unknown }; // OK scope resolution
+Color floor{ Color::unknown }; // OK scope resolution
 
 Color::red == red; // ERROR can't match type Color with Apple
 

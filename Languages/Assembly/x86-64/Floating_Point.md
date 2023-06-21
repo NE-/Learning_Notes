@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 August 27
+  Author:  NE- https://github.com/NE-
+  Date:    2022 August 27
   Purpose: General notes for x86-64 Floating Point.
 -->
 
@@ -79,7 +79,7 @@ cvtsi2sd xmm0, dword [x] ; convert dword integer
  | jbe | if <= (floating point) | jc jnae | CF=1 or ZF=1 |
  | ja | if > (floating point) | jnbe | ZF=0, CF=0 |
  | jae | if >= (floating point) | jnc jnb | CF=0 |
-```asm
+```x86asm
 movss   xmm0, [a]
 mulss   xmm0, [b]
 ucomiss xmm0, [c]
@@ -98,7 +98,7 @@ jbe     less_eq   ; jump if a*b <= c
 - `maxpd` maximum packed for 2 doubles.
   - Destination MUST be XMM; source can be XMM or memory.
   - Result stored in destination.
-```asm
+```x86asm
 movss  xmm0, [x] ; move x into xmm0
 maxss  xmm0, [y] ; xmm0 has max(x,y)
 movapd xmm0, [a] ; move a[0] and a[1] into xmm0
@@ -125,7 +125,7 @@ minpd  xmm0, [b] ; xmm0[0] has min(a[0],b[0])
 
 ### Sample Code
 d = sqrt( (x<sub>1</sub>-x<sub>2</sub>)<sup>2</sup>+(y<sub>1</sub>-y<sub>2</sub>)<sup>2</sup>+(z<sub>1</sub>-z<sub>2</sub>)<sup>2</sup> )
-```asm
+```x86asm
 ; Find distance in 3D space
 
 dist3d:
@@ -144,7 +144,7 @@ dist3d:
   ret
 ```
 d = x<sub>1</sub>x<sub>2</sub> + y<sub>1</sub>y<sub>2</sub> + z<sub>1</sub>z<sub>2</sub>
-``` asm
+``` x86asm
 ; Find dot product of 3D vectors
 
 dot_product:
@@ -160,7 +160,7 @@ dot_product:
 ```
 
 Horner's Rule
-```asm
+```x86asm
 ; Evaluate polynomial using Horner's Rule
 
 horner:

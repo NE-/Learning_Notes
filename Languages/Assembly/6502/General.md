@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 June 27
+  Author:  NE- https://github.com/NE-
+  Date:    2022 June 27
   Purpose: General notes for the 6502
 -->
 

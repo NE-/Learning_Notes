@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 August 31
+  Author:  NE- https://github.com/NE-
+  Date:    2022 August 31
   Purpose: General Fortran (95/2003/2008) I/O Notes.
 -->
 

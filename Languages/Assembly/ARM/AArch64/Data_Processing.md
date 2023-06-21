@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 06
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 06
   Purpose: ARM64 Data Processing notes.
 -->
 

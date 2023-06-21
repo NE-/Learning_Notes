@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 05
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 05
   Purpose: General Fortran (95/2003/2008) Derived Data Type Notes.
 -->
 
@@ -91,10 +91,10 @@ program classScores
 contains
 
   subroutine readStudents (class, count)
-  type(student), dimension(50), intent(out) :: class
-  integer, intent(out) :: count = 0
-  character(60) :: tempname
-  real :: tempscore
+    type(student), dimension(50), intent(out) :: class
+    integer, intent(out) :: count = 0
+    character(60) :: tempname
+    real :: tempscore
 
     do
       ! Prompt for name

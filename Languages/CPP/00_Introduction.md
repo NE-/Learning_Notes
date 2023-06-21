@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 19
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 19
   Purpose: C++ Introduction
 -->
 
@@ -8,7 +8,7 @@
 - Developed by Bjarne Stroustrup at Bell Labs as an *extension* to C starting in 1979.
   - Standardized 1998 by ISO.
 - Popularized because it was an object-oriented language.
-- 1998 standard was updated in 2003, known as C++03. Later major updates: C++11, C++14, C++17, C++20. C++23 coming soon.
+- 1998 standard was updated in 2003, known as C++03. Later major updates: C++11, C++14, C++17, C++20, C++23 coming soon.
   - C++17 is the *safe* standard for modern C++ programming (as of 2022). Typically safe to use one or two previous version from the current standard because not all defects have been fixed and not all good and practices (of new features) are known yet. Also for cross-platform compatibility.
 
 # Compiler

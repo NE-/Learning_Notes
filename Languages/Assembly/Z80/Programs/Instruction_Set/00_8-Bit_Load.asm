@@ -1,6 +1,6 @@
 ;;
-; Author: NE- https://github.com/NE-
-; Date: 2022 June 28
+; Author:  NE- https://github.com/NE-
+; Date:    2022 June 28
 ; Purpose: Testing out the 8-Bit load group
 ;;
 

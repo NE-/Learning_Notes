@@ -1,6 +1,6 @@
 !!!
-! Author: NE- https://github.com/NE-
-! Date: 2022 November 10
+! Author:  NE- https://github.com/NE-
+! Date:    2022 November 10
 ! Purpose: Linear Search implementation in Fortran
 !!!
 
@@ -21,15 +21,15 @@ program LinSearch
   print "(a, i3)", "Number -34 in index ", LinearSearch(arr, -34)
 
 contains
-!!!
-! @brief Implementation of Linear Search
-! 
-! @param arr Integer array to be searched
-! @param val Element to be found
-! 
-! @return retVal Index where element is stored
-!                -1 if element not found in array
-!!!
+  !!!
+  ! @brief Implementation of Linear Search
+  ! 
+  ! @param arr - Integer array to be searched
+  ! @param val - Element to be found
+  ! 
+  ! @return retVal Index where element is stored
+  !                -1 if element not found in array
+  !!!
   integer function LinearSearch(arr, val) result(retVal)
     implicit none
     integer, intent(in) :: arr(:), val

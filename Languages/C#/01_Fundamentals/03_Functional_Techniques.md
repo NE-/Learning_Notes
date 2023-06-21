@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 October 14
+  Author:  NE- https://github.com/NE-
+  Date:    2022 October 14
   Purpose: C# Functional Techniques
 -->
 

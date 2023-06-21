@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 02
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 02
   Purpose: General Fortran (95/2003/2008) Looping.
 -->
 
@@ -20,7 +20,7 @@ end do
 
 ## EXIT and CYCLE
 - `exit` used to exit a loop (counter or conditionally controlled).
-- `cycle` skip the remaining portion of do-loop and start back at the top. Counter or conditionally controlled loops.
+- `cycle` skips the remaining portion of do-loop and start back at the top. Counter or conditionally controlled loops.
   - The next index counter updated to next iteration.
 
 ## Conditional Controlled
@@ -41,7 +41,7 @@ do
 end do
 ```
 ```fortran
-! Prompt until corect input
+! Prompt until correct input
 do
   write (*,*) "Enter month (1-12): "
   read (*,*) month

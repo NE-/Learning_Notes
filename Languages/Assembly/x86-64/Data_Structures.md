@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 August 28
+  Author:  NE- https://github.com/NE-
+  Date:    2022 August 28
   Purpose: General notes for Data Structures in x86-64 Assembly.
 -->
 
@@ -8,7 +8,7 @@
 ## Linked Lists
 - Chain of nodes.
   - Example is stack-like (first in is first node).
-```asm
+```x86asm
 ; Node struct
         struc node
 n_value resq  1 ; data value
@@ -80,9 +80,9 @@ main:
 .scanf_fmt:
   db "%ld",0
       segment .text
-      push rbp      ; epilogue
-      mov  rbp, rsp ; epilogue
-      sub  rsp, 16  ; allocate memory
+      push rbp               ; epilogue
+      mov  rbp, rsp          ; epilogue
+      sub  rsp, 16           ; allocate memory
       call newlist
       mov  [rsp+.list], rax  ; sets .list to 0 (NULL)
 .more lea  rdi, [.scanf_fmt] ; prepare for scanf
@@ -105,7 +105,7 @@ main:
 ## Doubly Linked List
 - 2 pointers for each node: one for previous node, one for next node.
   - Example is circularly linked.
-```asm
+```x86asm
         struc node
 n_value resq 1
 n_next  resq 1
@@ -118,7 +118,7 @@ n_prev  resq 1
 newlist:
   push rbp
   mov rbp, rsp
-  mov edi, node_size ; prepare for allocation
+  mov edi, node_size    ; prepare for allocation
   call malloc
   mov [rax+n_next], rax ; link to itself
   mov [rax+n_prev], rax ; link to itself
@@ -188,7 +188,7 @@ main:
 - Good hash functions give good key distribution for short chains.
   - Recommended that a hash table length should be a prime number. If there is no pattern to keys, use *n* mod *t*.
     - *n* is the key, *t* is table length.
-```asm
+```x86asm
 ; Hash function. Table length = 256 (0xFF)
 ;; i = hash(n);
 ;;; n % 256
@@ -214,7 +214,7 @@ int hash(unsigned char* s) {
 ```
  ---
 
-```asm
+```x86asm
         segment .data
 table   times 256 dq 0 ; initialize array of length 256
         struc node
@@ -341,7 +341,7 @@ main:
 - Generally built with ordering applied to keys.
   - If node's key is less than previous, link "left," else link "right."
   - Ordering makes searches faster (called Binary Search Trees) through comparative traversals.
-```asm
+```x86asm
         struc node
 n_value resq 1
 n_left  resq 1

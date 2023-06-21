@@ -1,6 +1,6 @@
 ;;
-; Author: NE- https://github.com/NE-
-; Date: 2022 July 02
+; Author:  NE- https://github.com/NE-
+; Date:    2022 July 02
 ; Purpose: Testing out the Jump Group
 ;;
 

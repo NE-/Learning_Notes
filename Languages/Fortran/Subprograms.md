@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 05
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 05
   Purpose: General Fortran (95/2003/2008) Subprogram Notes.
 -->
 
@@ -25,7 +25,7 @@ end program name
 - Arguments in calling routine are referred to as *actual arguments*.
 - Arguments in function or subroutine referred to as *formal arguments*.
   - Values passed from calling routine.
-- Only way to transfer data in or out  of a subroutine.
+- Only way to transfer data in or out of a subroutine.
 
 ### Intent
 - *intent(in)*: information passed into function or subroutine.
@@ -103,4 +103,4 @@ contains
 
 end program sumavg
 ```
-- Functions return with a value, subroutine is a task and "return' only through arguments (intent(in|out|inout)).
+- Functions return with a value, subroutine is a task and "return" only through arguments (intent(in|out|inout)).

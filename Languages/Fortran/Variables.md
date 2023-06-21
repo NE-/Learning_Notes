@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 August 30
+  Author:  NE- https://github.com/NE-
+  Date:    2022 August 30
   Purpose: General Fortran (95/2003/2008) Variables Notes.
 -->
 
@@ -22,7 +22,7 @@
  | logical | Only be **.true.** or **.false.** |
 
 ### Integer
-- Integer division, no rounding will occur.
+- Integer division: no rounding will occur.
 - Assigning float to integer will cause precision loss.
   - Best to perform explicit conversions.
 
@@ -37,7 +37,7 @@
 
 ## Declaring Variables
 - `<type> :: <list of variable names>`
-- Declarations placed in the beginning of the program (after program statement).
+- Declarations placed at the beginning of the program (after program statement).
 
 ### Variable Ranges
 - Integer: -2,147,483,648 to +2,147,483,647.

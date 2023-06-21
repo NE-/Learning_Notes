@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 19
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 19
   Purpose: C++ Arrays
 -->
 
@@ -9,7 +9,7 @@
   - Brackets are literal '[' ']'.
 ```cpp
 int arr1[]{ 1, 2, 3, 4 }; // Compiler determines length
-int arr2[3]{}; // Elements can contain 0 or random,
+int arr2[3]{}; // Elements can be 0 or random,
                // always assume random!
 
 constexpr std::size_t maxStudents{ 30 };
@@ -19,7 +19,7 @@ int students[maxStudents]{};
 # Lengths and Size
 ```cpp
 int arr[]{ 1, 2, 3, 4, 5 };
-sizeof arr; // 5 ints * 4 bytes each -> retuns 20
+sizeof arr; // 5 ints * 4 bytes each -> returns 20
             // 20 is the SIZE
 sizeof arr / sizeof arr[0]; // 5 ints * 4 bytes each / sizeof an int
                             // 20 / 4 -> returns 5

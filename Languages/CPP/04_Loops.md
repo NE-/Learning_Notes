@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 19
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 19
   Purpose: C++ Loops
 -->
 
@@ -35,7 +35,7 @@ while (<condition>);
   )
     Run the block
 
-  Any statement or condition can br omitted
+  Any statement or condition can be omitted
     omitted condition assumes true
  */
 for (int i{0}, j{2}; i <= 2; ++i, ++j) {}
@@ -49,6 +49,6 @@ for (
 
 # Break and Continue
 - Used to interrupt flow of the loop.
-  - Because of flow manipulation, many peopole recommend not using them; however, it's not bad practice but does require close monitoring!
+  - Because of flow manipulation, many people recommend not using them; however, it's not bad practice but does require close monitoring!
 - `break` breaks out of the statement and continues flow outside of the statement.
 - `continue` ends the current iteration and sends flow to the end of the loop.

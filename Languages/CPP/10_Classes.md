@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 20
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 20
   Purpose: C++ Classes
 -->
 
@@ -216,7 +216,7 @@ class MyInt {
 
     int getInt() const { return m_i; }
 
-    // Let the class know, but it's not defined here
+    // Let the class know, but it's defined elsewhere
     friend MyInt operator+(const MyInt& m1, const MyInt& m2);
 };
 

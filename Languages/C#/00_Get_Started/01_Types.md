@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 29
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 29
   Purpose: C# Introduction to Types
 -->
 

@@ -1,6 +1,6 @@
 <!--
-  Author: NE- https://github.com/NE-
-  Date: 2022 September 19
+  Author:  NE- https://github.com/NE-
+  Date:    2022 September 19
   Purpose: C++ Data Types and Variables
 -->
 
@@ -71,8 +71,10 @@ j >>= 1; // -1 sign-extension
 // COPY
 int pi = 3.14159; // Legal but causes data loss
 int choice = 'a'; // Legal as char is integral
+
 // DIRECT
 MyClass b(3,1,4,"159");
+
 // LIST
 int a{ 5 };
 int b{ 3.14159 }; // ERROR incompatible type!
@@ -122,7 +124,7 @@ print(static_cast<int>(5.5)); // Explicit conversion
 
 // char to int
 char c{ 'a' };
-std:cout << static_cast<int>(c); // 97
+std::cout << static_cast<int>(c); // 97
 
 // Unsigned to signed
 unsigned int u_i{ 3u };
